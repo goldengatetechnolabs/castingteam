@@ -1,0 +1,15 @@
+/nbproject/private/
+/models/*
+/php/core/config.php
+/_tmp/*
+/templates/_compile/*
+*.DS_Store
+composer.phar
+vendor
+cache
+configs
+logs
+db_dump
+.htpasswd
+/.htaccess
+.idea

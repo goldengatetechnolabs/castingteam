@@ -1,0 +1,77 @@
+#loginform {
+    width:100%;
+    padding:10px;
+    padding-top: 0;
+    box-sizing:border-box;
+    font-family: helvetica, sans-serif;
+}
+
+#loginform input{
+    width: 200px;
+}
+
+#loginform p
+{
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 38px;
+    margin: 0 0 30px;
+    position: relative;
+}
+
+#loginform a {
+   float: right;
+   padding-right:10px;
+   color: #fff;
+   transition: all 0.4s ease-out 0s; 
+}
+
+#loginform a:hover {
+   color: #aad8d8;
+}
+
+#loginform .user_info {
+   font-size: 16px;
+   margin: 0 0 10px;
+}
+
+#loginform #login {
+    color: #000;
+    font-family: "source_sans_prosemibold", sans-serif;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 7px 14px;
+    text-align: left;
+    display: block;
+    
+}
+
+#loginform #password {
+    color: #000;
+    font-family: "source_sans_prosemibold", sans-serif;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 7px 14px;
+    text-align: left;
+    display: block;
+}
+
+#loginform #dologin {
+    border: 1px solid #fff;
+    background: #000 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-family: "HelveticaNeueLT-Condensed", sans-serif;
+    font-size: 17px;
+    line-height: 18px;
+    padding: 7px 14px;
+    transition: all 0.2s ease-out 0s;
+    width:120px;
+}
+
+#loginform .container {
+    width:350px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

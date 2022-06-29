@@ -1,0 +1,90 @@
+.field_wrap_inp input {
+    background: #ffffff none repeat scroll 0 0;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #5a5a5a;
+    font-family: "source_sans_prosemibold";
+    font-size: 15px;
+    line-height: 16px;
+    padding: 10px 14px;
+    text-align: left;
+    width: 97%;
+}
+
+#registration .field_wrap_inp .field_wrap_inp_sel select { margin: 0; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; background: #ffffff; color: #303030; font-family: 'HelveticaNeueLT-Condensed'; font-size: 15px; line-height: 18px; border: none; outline: none; display: inline-block; -webkit-appearance: none; -moz-appearance: none; appearance: none; cursor: pointer; width: 100%; height: 38px; padding: 10px 12px; box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; }
+#registration .field_wrap .field_wrap_inp .field_wrap_inp_sel{ position: relative; font-family: 'HelveticaNeueLT-Condensed'; margin: 0 0 0 0; display: block; border: 2px solid #dcdcdc; width: 96%; height: 38px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block; vertical-align: top; }
+#registration .field_wrap .field_wrap_inp .field_wrap_inp_sel:after {  content: '\f0d7'; font-family: FontAwesome;  width: 48px; height: 38px; color: #8c8c8c; right: -16px; top: 0;   padding: 0 0 0; position: absolute; pointer-events: none; -webkit-border-radius: 0 10px 10px 0; -moz-border-radius: 0 10px 10px 0; border-radius: 0 10px 10px 0;  line-height: 38px;}
+#registration .field_wrap .field_wrap_inp .field_wrap_inp_sel:after {  content: '\f107';}
+#registration.field_wrap .field_wrap_inp .field_wrap_inp_sel:before { content: ''; right: 0; top: 0; width: 48px; height: 38px; background: #ffffff; position: absolute; pointer-events: none; display: block; -webkit-border-radius: 0 8px 8px 0; -moz-border-radius: 0 8px 8px 0; border-radius: 0 8px 8px 0; border-left:2px solid #dcdcdc; }
+
+.field_wrap label{
+    color: #5a5a5a;
+    float: left;
+    font-family: "source_sans_proSBdIt";
+    font-size: 15px;
+    line-height: 18px;
+    margin: 12px 0 0;
+    max-width: 182px;
+    width: 100%;
+}
+	
+.field_wrap{
+    content: "";
+    display: table;
+    margin: 0 0 14px;
+}
+
+.field_wrap{
+    clear: both;
+    width: 100%;
+}
+
+.field_wrap_inp {
+    float: left;
+    max-width: 425px;
+    width: 100%;
+    position: relative;
+}
+
+.required:after{
+    color: #5a5a5a;
+    content: "*";
+    font-family: "source_sans_proSBdIt";
+    font-size: 15px;
+    line-height: 18px;
+    position: absolute;
+    right: 0;
+    top: 13px;
+}
+
+.field_wrap_inp button{
+    background: #007A60 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    font-family: "HelveticaNeueLT-Condensed";
+    font-size: 17px;
+    line-height: 18px;
+    padding: 10px 34px;
+    transition: all 0.2s ease-out 0s;
+}
+
+.field_wrap_inp span{ color: #5a5a5a;
+    float: right;
+    font-family: "source_sans_proSBdIt";
+    font-size: 15px;
+    line-height: 18px;
+    margin: 11px 2% 0 0;
+}
+
+.team_data {
+     max-width: 610px;
+     width: 100%;
+     color: #878787;
+     font-family: "source_sans_proregular";
+     font-size: 19px;
+     line-height: 21px;
+}

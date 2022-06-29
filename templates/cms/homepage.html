@@ -1,0 +1,101 @@
+{*
+<h1 class="float">New registrations</h1>
+<div class="lijn gn-margin" style="clear:both"></div>
+
+<table id="cms-subscriptions" cellspacing="3" cellpadding="0">
+  {foreach from=$models item=r key=id}
+  <tr>
+    <td class="center" style="width: 90px;">{$r.datum_tonen}</td>
+    <td>{$r.naam} {$r.voornaam}</td>
+    <td><a href="mailto:{$r.email}" class="mail">{$r.email}</a></td>
+    <td class="center button"><a href="/cms/models/models/aanpassen/?id={$id}" class="button grijs klein">View</a></td>
+    <td class="center button"><a href="#" class="button klein">Accept</a></td>
+    <td class="center button"><a href="#" class="button rood klein">Reject</a></td>
+    <!-- <td class="center"><input type="checkbox" /></td> -->
+  </tr>
+  {/foreach}
+</table>
+
+<!-- EVENT LOG -->
+<h1>Event log</h1>
+*}
+
+<p class="cms-page-title">Welcome {$admin.voornaam}</p>
+
+<div class="cms-navigation">
+  <div class="cms-navigation-block">
+    <div class="cms-navigation-title">
+      <span>Database management</span>
+    </div>
+    <ul>
+      {*if $admin.typeName!='updater'*}
+      <li{if $hoofdmenu_actief=='modellen'} class="is-active"{/if}>
+        <a href="/cms/models/models/lijst">
+          <i class="fas fa-user-plus"></i>
+          <span>Our people</span>
+          <small>Filter & search</small>
+        </a>
+      </li>
+      {*/if*}
+      <li{if $hoofdmenu_actief=='inschrijvingen'} class="actief"{/if}>
+        <a href="/cms/models/models/selecties">
+          <i class="fas fa-check-circle"></i>
+          <span>Selections</span>
+        </a>
+      </li>
+      <li{if $hoofdmenu_actief=='inschrijvingen'} class="actief"{/if}>
+        <a href="/cms/inschrijvingen/models/{if $admin.typeName!='updater'}nieuw{else}updates{/if}">
+          <i class="fas fa-plus-square"></i>
+          <span>Profiles</span>
+          <small>Add and update profiles</small>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="cms-navigation-block">
+    <div class="cms-navigation-title">
+      <span>Bookings & Sales</span>
+    </div>
+    <ul>
+      <li{if $hoofdmenu_actief=='clients'} class="is-active"{/if}>
+        <a href="/cms/clients/clients/create_client">
+          <i class="fas fa-list"></i>
+          <span>Clients</span>
+          <small>Add or manage clients</small>
+        </a>
+      </li>
+      {*if $admin.typeName!='updater'*}
+      <li{if $hoofdmenu_actief=='vips'} class="is-active"{/if}>
+        <a href="#">
+          <i class="fas fa-bolt"></i>
+          <span>Bookings</span>
+          <small>Add or manage bookings</small>
+        </a>
+      </li>
+      {*/if*}
+      <li{if $hoofdmenu_actief=='vips'} class="is-active"{/if}>
+        <a href="#">
+          <i class="fas fa-calculator"></i>
+          <span>Sales</span>
+          <small>Turnover</small>
+        </a>
+      </li>
+      <li{if $hoofdmenu_actief=='vips'} class="is-active"{/if}>
+        <a href="#">
+          <i class="fas fa-file-invoice"></i>
+          <span>Invoices</span>
+          <small>Create and send invoices</small>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="cms-eventlog" class="cms-eventlog">
+  <!-- <p>Today {if $tel_nieuw==1}there is{else}there are{/if} {$tel_nieuw} new subscription{if $tel_nieuw<>1}s{/if} and {$tel_aangepast} {if $tel_aangepast==1} person {else} people {/if} {if $tel_aangepast==1} has updated his / her details {else} have updated their details{/if}.</p> -->
+  <ul>
+    {foreach from=$log item=r key=id}
+    <li>{$r.datum} - <strong>{$r.voornaam} {$r.naam}</strong>: {$r.bericht} <a href="/cms/models/models/aanpassen/?id={$r.id_model}">View</a></li>
+    {/foreach}
+  </ul>
+</div>

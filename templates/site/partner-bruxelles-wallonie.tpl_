@@ -1,0 +1,52 @@
+{include file='site/header.tpl'}
+{include file='site/mobile_menu.tpl'}
+<section class="main_content inner_content">
+  <div class="pushmenu-push pushmenu-push-toright model_over_main">
+    {include file='site/sidebar.tpl'}
+    <div class="grid_content model_over_cont">
+      <section class="buttonset model_overview_btn">
+        <div id="nav_list"><span></span></div>
+      </section>
+      <section class="content my_team">
+        <header class="page_title mar39">
+          <h1>Recherche de partenaires</h1>
+        </header>
+        <section class="content_sec_1 pad_none">
+            <p class="sub_header">Castingteam ne cesse de cro&icirc;tre. C&rsquo;est pourquoi nous recherchons des partenaires pour le march&eacute; francophone de Bruxelles et de Wallonie.<br><br>Pour nos activit&eacute;s dans la partie francophone du pays, nous recherchons un...<br><br></p>
+            <div class="max-width-900">
+                <p class="sub_header_inner" style="margin-top : 20px;"><span style="font-size : 30pt;">Partenaire / booker (franchise) H/F</span></p><br><br><hr size="1" style="margin-left : 54px; width : 700px;"><br><br><p class="sub_header_inner">&Agrave; propos de vous...</p>
+                <div class="paragraph-text">
+                    <ul style="margin-left : 18px; margin-top : 10px;">
+                        <li>Vous disposez d&rsquo;un r&eacute;seau de professionnels de la publicit&eacute;, des m&eacute;dias et du divertissement&nbsp;: photographes, maisons de production, r&eacute;gisseurs, agences publicitaires... Vous connaissez de nombreuses personnes dans le secteur, ou vous &ecirc;tes un fonceur et savez comment d&eacute;velopper un r&eacute;seau.<br><br></li>
+                        <li>Le monde de la publicit&eacute; de Bruxelles n&rsquo;a aucun secret pour vous. <br><br></li>
+                        <li>Votre langue maternelle est le fran&ccedil;ais, mais vous parlez &eacute;galement parfaitement une autre langue (anglais ou n&eacute;erlandais). <br><br></li>
+                        <li>Vous &ecirc;tes une personne cr&eacute;ative, sociable, enthousiaste et passionn&eacute;e de la publicit&eacute; et du divertissement.<br><br></li>
+                        <li>Vous avez une exp&eacute;rience dans le secteur des castings et/ou du travail avec les directeurs de casting, les maisons de production, les producteurs...<br><br></li>
+                        <li>Vous avez du flair pour le talent et vous &ecirc;tes capable de l&rsquo;identifier et de le canaliser. Vous avez l&rsquo;&oelig;il pour s&eacute;lectionner et choisir les talents ad&eacute;quats sur la base des instructions du client.<br><br></li>
+                        <li>Vous &ecirc;tes capable de travailler de mani&egrave;re ind&eacute;pendante et autonome. Vous &ecirc;tes capable de faire preuve de pers&eacute;v&eacute;rance.<br><br></li>
+                        <li>Vous avez le sens des affaires ainsi que des dispositions pour le commerce et la communication. <br><br></li>
+                    </ul>
+                </div>
+                <p class="sub_header_inner">&Agrave; propos de nous...</p>
+                <div class="paragraph-text">
+                    <ul style="margin-left : 18px; margin-top : 10px;">
+                        <li>Nous n&rsquo;existons que depuis peu sous le nom de Castingteam. Mais nous effectuons des bookings sous le nom de Borderfield Models &amp; Casting depuis plus de 10&nbsp;ans d&eacute;j&agrave;, principalement en Flandre. Au fil des ans, nous avons d&eacute;croch&eacute; des contrats publicitaires pour des milliers de nos talents. Avec un nouveau nom et une nouvelle image de marque, nous avons r&eacute;alis&eacute; un grand pas en avant et nous sommes plus occup&eacute;s que jamais. Pour nous, Bruxelles repr&eacute;sente un terrain encore inexplor&eacute; offrant de nombreuses opportunit&eacute;s. <br><br></li>
+                        <li>Le fichier de Castingteam compte plus de 4000 talents et nous disposons d&rsquo;un vaste r&eacute;seau. <br><br></li>
+                        <li>Notre tout nouveau site web et notre vaste syst&egrave;me CMS sur mesure nous permet de rechercher, trier, filtrer et contacter rapidement les talents. Nos agents d&rsquo;artistes peuvent tr&egrave;s rapidement r&eacute;aliser et affiner des s&eacute;lections et les transf&eacute;rer ensuite au client.  <br><br></li>
+                        <li>En outre, nous disposons d&rsquo;un module &eacute;tendu de booking/client. <br><br></li>
+                    </ul>
+                </div>
+            <p class="sub_header_inner" style="margin-bottom : 20px;">Partenariat...</p>
+            <div>
+                <p class="paragraph-text">Le mod&egrave;le de revenus est int&eacute;ressant et repr&eacute;sente une v&eacute;ritable opportunit&eacute; pour le candidat ad&eacute;quat. Sur demande, nous vous ferons parvenir plus de d&eacute;tails sur cette opportunit&eacute; et sur la mani&egrave;re dont nous envisageons notre collaboration.</p><br><p class="paragraph-text">Envoyez une br&egrave;ve lettre de motivation et quelques explications &agrave; votre sujet par e-mail &agrave; <span class="strong"><a href="mailto:david@castingteam.com" class="black-underlined">david@castingteam.com</a></span>. </p>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- End Content -->
+    </div>
+    <!-- End Container -->
+  </div>
+</section>
+<!-- END: MAIN CONTENT -->
+{include file='site/footer.tpl'}

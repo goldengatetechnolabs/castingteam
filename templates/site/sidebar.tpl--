@@ -1,0 +1,16 @@
+<nav class="pushmenu pushmenu-open">
+
+  <div class="side_top_links">
+    <ul>
+      {foreach from=$categories key=k item=category}
+        <li {if $current_category eq $category['category_id']}class="current"{/if}  data-id="{$category['category_id']}">{if $current_category eq $category['category_id']}<i class="fa fa-star"></i>{/if}<a href="/{$taal}/{$taalContent['navigation'][$category['codename']]}/">{$taalContent['categories'][$category['category_id']]}</a></li>
+      {/foreach}
+    </ul>
+  </div>
+  <div class="side_search">
+   {include file='site/search.tpl'}
+  </div>
+  {if $current_page eq 'innerpage'}
+  {include file='site/filters.tpl'}
+  {/if}
+</nav>

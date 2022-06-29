@@ -1,0 +1,408 @@
+
+
+.error {
+  border-color: red !important;
+}
+
+.error-checkbox {
+    outline: red solid thin;
+}
+
+.fnt_15 { font-size: 15px; }
+.underlined_text { text-decoration: underline; }
+#form-stap2 div#checkboxes-stap2.skin-color-block {
+    margin-bottom: 20px; width: 90%; font-size: 15px; max-width: none; height: auto; padding-bottom: 0;
+}
+
+.tb {display: table;}
+.tb-row {display: table-row;}
+.tb-cell {display: table-cell;}
+.pd-left-10 {padding-left: 10px;}
+.pd-left-50 {padding-left: 50px;}
+.country-origin-title {line-height: 40px;}
+#form-stap2 .team_data .tb-row .field_wrap .field_wrap_inp { width: 250px; }
+#form-stap2 .team_data .tb-row .field_wrap .field_wrap_inp .field_wrap_inp_sel { width: 230px; }
+
+
+.submit input{
+
+	background: #f0f0f0 none repeat scroll 0 0;
+    border: 1px solid #000000;
+
+    box-sizing: border-box;
+    color: #000000;
+
+
+    line-height: 16px;
+
+    text-align: left;
+
+
+    font-family: "source_sans_prosemibold";
+    font-size: 15px;
+    margin-right: 3px;
+    outline: medium none;
+    padding: 8px;
+    width: 220px;
+	height: 41px;
+
+
+
+}
+
+.submit a{
+
+
+	background: #000000 none repeat scroll 0 0;
+    border: 2px solid #000000;
+    color: white;
+    font-family: "source_sans_prosemibold";
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+
+
+}
+
+.submit a:hover{
+
+	background: #333333 none repeat scroll 0 0;
+	}
+
+
+.input_block{
+	width:800px;
+}
+
+.input_block .submit,.input_block .submit p{
+
+}
+
+.input_block p{
+	width: 250px;
+	float: left;
+}
+
+
+
+.sub_title p{
+
+width:100%;
+display: block;
+
+}
+.content .sub_title {
+
+	width: 80%;
+	padding-left: 58px;
+	padding-bottom: 40px;
+}
+
+
+.sub_title p i{
+
+	width: 100%;
+}
+
+.sub_title div{
+
+    max-width:960px;
+	margin-left : -18px;
+
+}
+
+.model_title .page_title{
+
+	margin-bottom: 30px;
+}
+
+.team_data .field_wrap .field_wrap_inp input{
+
+width: 300px;
+
+}
+.team_data{
+	width: 500px;
+	display: inline-block;
+	vertical-align:top;
+	margin-top: -10px;
+	padding: 10px 10px 10px 20px;
+	background-color:#f0f0f0;
+}
+
+.field_wrap .field_wrap_inp button{
+
+	margin-top: 30px;
+
+}
+
+.team_data .field_wrap .field_wrap_inp{
+
+width: 310px;
+
+}
+
+.sub_title ul li{
+	padding-bottom: 20px;
+	color: #303030;
+
+    font-family: "source_sans_proregular";
+    font-size: 15px;
+
+    max-width:960px;
+}
+.sub_title ul li ul{
+	padding-top: 20px;
+}
+.sub_title ul li ul li{
+	list-style-type: circle;
+	margin-left: 10px;
+	padding-bottom: 0;
+	width:100%;
+}
+
+.team_data .field_wrap .field_wrap_inp .small::before {
+
+	width:28px;
+}
+
+.team_data .field_wrap .field_wrap_inp .small::after {
+	width: 38px;
+}
+
+.info_title{
+
+font-size: 19px;
+margin-bottom: 30px;
+font-family: "source_sans_proregular";
+
+
+}
+#form-stap2 .team_data {
+	width: 320px;
+}
+#form-stap2 .team_data .field_wrap .field_wrap_inp{
+width: 170px;
+
+}
+#form-stap2 .team_data .field_wrap .field_wrap_inp_sel{
+
+width: 150px;
+
+}
+#form-stap2 .team_data .field_wrap label{
+max-width: 150px;
+}
+
+#form-stap2 #checkboxes-stap2{
+
+	width: 145px;
+	height:290px;
+	background-color:#f0f0f0;
+	padding:10px 10px 40px 10px;
+	margin-bottom : 10px;
+}
+
+.team_data header h5{ border-bottom: 1px solid #000000;
+font-size: 16px;
+margin-bottom: 20px;
+padding-bottom: 10px;}
+
+#form-3-links .custom_filter_sub,#checkboxes-stap2 .custom_filter_sub{
+	font-size: 15px;
+}
+
+
+#qq-upload-button{
+
+
+
+
+}
+
+#form-4-upload{
+	margin-top: 20px;
+	margin-bottom: 30px;
+	width: 100%;
+
+    clear: both;
+}
+
+
+
+#form-4-upload .qq-upload-button{
+
+border: 2px dashed #000000;
+
+}
+
+
+#form-4-upload li{
+    vertical-align:top;
+	display: inline-block;
+	max-width: 187px;
+	font-size: 15px;
+	margin-top:10px;
+	margin-right:10px;
+    width:187px;
+    height:187px;
+}
+#form-4-upload li input{
+
+    height: 200px;
+
+
+}
+
+#form-4-upload li span{
+
+    display: block;
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+#form-4-upload li img:first-child{
+
+    width:190px;
+    height: 190px;
+
+
+}
+
+#form-4-upload #ajaxuploadloader img:first-child{
+
+    width:50px;
+    height: 50px;
+    display: block;
+    margin:auto;
+    margin-top: 70px;
+
+}
+
+
+/*****************************************
+ * MODAL
+ *****************************************/
+
+ #modal a{
+
+    background: #000000 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-family: "HelveticaNeueLT-Condensed";
+    font-size: 17px;
+    line-height: 17px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-out 0s;
+    width: 100px;
+    margin-left:25%;
+    margin-right:25%;
+    margin-top: 20px;
+ }
+
+#modal-bg {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1040;
+background-color: white;
+width: 100%;
+height: 100%;
+zoom: 1;
+filter: alpha(opacity=50);
+opacity: 0.5;
+}
+
+    #modal-bg.crop {
+    background-color: black;
+    }
+
+#modal {
+position: fixed;
+top: 50%;
+left: 40%;
+z-index: 1050;
+width: 560px;
+margin: -250px 0 0 -280px;
+background-color: #ffffff;
+border: 1px solid #C2C2C2;
+/* IE6-7 */
+
+-webkit-box-shadow: 0 3px 17px #CDCDCD;
+-moz-box-shadow: 0 3px 17px #CDCDCD;
+box-shadow: 0 3px 17px #CDCDCD;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+}
+
+
+    #modal.loader {
+    width: 28px;
+    height: 28px;
+    padding: 20px;
+    text-align: center;
+    margin: -14px 0 0 -14px;
+    }
+
+    #modal.alert {
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top:200px;
+    }
+
+    #modal.crop {
+    width: 903px;
+    height: 673px;
+    border: 0;
+    background-color: white;
+    margin: -325px 0 0 -453px;
+    padding: 10px;
+    }
+
+        #modal.crop iframe {
+        width: 893px;
+        height: 673px;
+        border: 0;
+        overflow: hidden;
+        }
+
+    @media only screen and (max-width: 960px) {
+        #modal {
+        top: 20%;
+        left: 50%;
+        margin: 0 !important;
+        width: 200px !important;
+        margin-left: -100px !important;
+        }
+    }
+
+.input_block p{
+    padding-bottom: 70px;
+    padding-top: 10px;
+    color: #000000;
+    display: block;
+    float: left;
+    font-family: "source_sans_proregular";
+    font-size: 15px;
+    line-height: 19px;
+
+}
+.meld_btn{
+}
+#stap_one_submit,#stap_submit{
+    font-family: "source_sans_proregular";
+}
+.cast_team_cont_btm.vips.mod_inner1 { padding-left: 40px;  }
+.custom_filter_sub label{ padding: 0; }

@@ -1,0 +1,7 @@
+<ul id="country-list">
+    <li value="belgie">{if $smarty.session.country eq 'belgie'}<i class="fa fa-check"></i>{/if}<a href="/nl/belgie" >België (NL)</a> </li>
+    <li value="belgique">{if $smarty.session.country eq 'belgique'}<i class="fa fa-check"></i>{/if}<a href="/fr/belgique">Belgique (FR)</a> </li>
+    <!--   <li value="belgium">{if $smarty.session.country eq 'belgium'}<i class="fa fa-check"></i>{/if}<a href="/en/belgium">Belgium (ENG)</a></li> -->
+    <li value="nederland">{if $smarty.session.country eq 'nederland'}<i class="fa fa-check"></i>{/if}<a href="/nl/nederland">Nederland (NL)</a></li>
+    <!-- <li value="netherlands">{if $smarty.session.country eq 'netherlands'}<i class="fa fa-check"></i>{/if}<a href="/en/netherlands">The Netherlands (ENG)</a> </li> -->
+</ul>

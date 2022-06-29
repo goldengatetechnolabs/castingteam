@@ -1,0 +1,44 @@
+server {
+    listen 80 default_server;
+
+    root /var/www;
+    index index.php index.html index.htm;
+
+    client_max_body_size 512M;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    gzip            on;
+    gzip_min_length 1000;
+    gzip_proxied    any;
+    gzip_types      *;
+
+    # logs
+    access_log /var/log/syslog;
+    error_log  /var/log/syslog;
+
+    location ~* \.(png|jpg|jpeg|gif|ico|bmp)$ {
+        expires 1m;
+        log_not_found off;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?r=$uri&$args;
+    }
+
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param        HTTPS  true;
+        fastcgi_read_timeout 300;
+        fastcgi_send_timeout 300;
+    }
+}
+
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+

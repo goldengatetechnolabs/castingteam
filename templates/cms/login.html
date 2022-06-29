@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Borderfield</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="nl" />   
+    <meta name="copyright" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index,follow" />   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">     
+    
+    <link rel="stylesheet" href="/css/cms/cms-new.css" type="text/css" /> 
+    <!-- <script type="text/javascript" src="/css/js/cms-new.js"></script>  -->
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/95e5d435-d0b4-4e0f-b140-a24dc196269a.js"></script>   
+</head>
+
+<body>
+
+    <div class="cms-container">
+
+        <div class="cms-login">
+            <div class="cms-login-logo">
+                <img src="/images/logo-new-black.png" alt="" />
+            </div>
+            <div class="cms-login-container">
+                <p>Log in to the Castingteam CMS</p>
+                <form class="cms-form" method="post" action="/cms/">
+                    <div class="cms-row">
+                        <div class="cms-col-1-1">
+                            {if isset($error) && $error<>''}
+                                <div class="text-error">{$error}</div>
+                            {/if}
+                        </div>
+                        <div class="cms-col-1-1">
+                            <!-- <div class="cms-input" data-input>
+                                <div class="cms-field">
+                                    <label class="cms-field-label">Email</label>
+                                    <input class="cms-field-value" type="text" name="email" data-input-value />
+                                </div>
+                            </div> -->
+                            <input type="text" name="email" placeholder="Email"/>
+                        </div>
+                        <div class="cms-col-1-1">
+                            <!-- <div class="cms-input" data-input>
+                                <div class="cms-field">
+                                    <label class="cms-field-label">Password</label>
+                                    <input class="cms-field-value" type="password" name="wachtwoord" data-input-value />
+                                </div>
+                            </div> -->
+                            <input type="password" name="wachtwoord" placeholder="Password"/>
+                        </div>
+                        <div class="cms-col-1-1">
+                            <input type="submit" value="Log in" class="cms-button cms-button-green" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+   
+</body>
+
+</html>

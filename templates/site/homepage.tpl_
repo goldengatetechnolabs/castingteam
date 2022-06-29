@@ -1,0 +1,206 @@
+{include file='site/header.tpl'}
+<!-- SET: MAIN CONTENT -->
+<section class="main_content">
+    <section class="ms-fullscreen-template">
+        <div class="index_btm clearfix">
+            <nav class="bottom_nav">
+                <ul>
+                    {foreach from=$categories key=k item=category}
+                        {if $k<7}
+                            <li><strong><a href="/{$taal}/{$taalContent['navigation'][$category['codename']]}/">{$taalContent.categories[$category['category_id']]}</a></strong></li>
+                        {/if}
+                    {/foreach}
+
+                    <li>
+                        <div class="searc_box clearfix">
+                            {include file='site/search.tpl'}
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <a href="#" class="go-top"><i class="fa fa-4x fa-angle-up"></i></a>
+    <section id="new_models" class="talent_sec" >
+        <div class="container">
+            <h2>{$taalContent['homepage']['new_talents_sec']['title']}</h2>
+            <p>{$taalContent['homepage']['new_talents_sec']['subtitle']}</p>
+            <div class="talent_team">
+                <ul class="clearfix">
+                    {foreach from=$last_models item=last_model}
+                        {assign var=model_id value=$last_model['model_id']}
+                        {assign var=image_id value=$last_model['images'][0]['id']}
+                        {if $image_id eq 'no_foto' or $image_id eq ''}
+                            {assign var="foto_path" value="/models/no_foto.jpg"}
+                        {else}
+                            {assign var="foto_path" value="/models/$model_id/website/thumbs/$image_id.jpg"}
+                        {/if}
+                        <li>
+                            <a href="/{$taal}/people/{$last_model['model_id']}">
+                                <figure>
+                                    <img src="{$foto_path}" alt="{$last_model['voornaam']} ({$last_model['model_id']})" width="228" height="350">
+                                </figure>
+                                <div class="title_bg clearfix">
+                                    <span><i class="fa fa-heart-o"></i> {$last_model['voornaam']} - {$last_model['model_id']}</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+        <a href="/{$taal}/people/" class="plus_icon"> </a> </section>
+    <section class="carousel_gallery" id="carousel_gallery">
+        <div class="container">
+            <h2>{$taalContent['homepage']['our_people_sec']['title']}</h2>
+            <p>{$taalContent['homepage']['our_people_sec']['subtitle']} test</p>
+        </div>
+        <section class="carousel_multiple">
+            <div class="gall_carousel">
+<div>
+<a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/nLsP7_UPK8k?autoplay=1" title="Marcia (4344), Carlo (3163), Colette (3601), Laurent (2860) en Emma (4196) voor Fairtrade Belgium"><div class="img_tp"><img width="363" height="363" alt="" data-lazy="/images/pubs/small/fairtrade.jpg"></div><div class="overlay_cont"><h3>Fairtrade Belgium</h3><p>Marcia (4344), Carlo (3163), Colette (3601), Laurent (2860) en Emma (4196) voor Fairtrade Belgium</p></div></a>
+<a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/QV0okVHEYkw?autoplay=1" title="Tessa (1592) en kids voor Colruyt"><div class="img_tp"><img width="363" height="363" alt="" data-lazy="/images/pubs/small/colruyt.jpg"></div><div class="overlay_cont"><h3>Colruyt</h3><p>Tessa (1592) en kids voor Colruyt</p></div></a>
+<a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/sCNIGEqzPQs?autoplay=1" title="Fred (3123) en Annelies (2250) voor de patatjes van Agristo"><div class="img_tp"><img width="363" height="363" alt="" data-lazy="/images/pubs/small/agristo.jpg"></div><div class="overlay_cont"><h3>Agristo</h3><p>Fred (3123) en Annelies (2250) voor de patatjes van Agristo</p></div></a>
+</div><div>
+                    <a class="image_container" href="/images/pubs/large/lotto.jpg" title="Tom (2797) voor Lotto"><div class="img_tp"><img width="363" height="363" alt="Tom (2797) voor Lotto" data-lazy="/images/pubs/small/lotto.jpg"></div><div class="overlay_cont"><h3>Lotto</h3><p>Tom (2797) voor Lotto</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/111111b.jpg" title="Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11"><div class="img_tp"><img width="363" height="363" alt="Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11" data-lazy="/images/pubs/small/111111b.jpg"></div><div class="overlay_cont"><h3>11.11.11.</h3><p>Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/thtA64rIPbs?autoplay=1" title="Jan (2482) voor Dag Allemaal"><div class="img_tp"><img width="363" height="363" alt="Jan (2482) voor Dag Allemaal" data-lazy="/images/pubs/small/dagallemaal.jpg"></div><div class="overlay_cont"><h3>Dag Allemaal</h3><p>Jan (2482) voor Dag Allemaal</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/broederlijkdelen.jpg" title="Annelies (2250) voor Broederlijk Delen"><div class="img_tp"><img width="363" height="363" alt="Annelies (2250) voor Broederlijk Delen" data-lazy="/images/pubs/small/broederlijkdelen.jpg"></div><div class="overlay_cont"><h3>Broederlijk Delen</h3><p>Annelies (2250) voor Broederlijk Delen</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/tM7EVk1oBjc?autoplay=1" title="Alexander (575) voor De Kust"><div class="img_tp"><img width="363" height="363" alt="Alexander (575) voor De Kust" data-lazy="/images/pubs/small/dekust.jpg"></div><div class="overlay_cont"><h3>De Kust</h3><p>Alexander (575) voor De Kust</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/velux.jpg" title="Alycia (2953), Marleen (509) en Robin (1422) voor Velux"><div class="img_tp"><img width="363" height="363" alt="Alycia (2953), Marleen (509) en Robin (1422) voor Velux" data-lazy="/images/pubs/small/velux.jpg"></div><div class="overlay_cont"><h3>Velux</h3><p>Alycia (2953), Marleen (509) en Robin (1422) voor Velux</p></div></a>
+                </div><div>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/4Ntdmc48gWM?autoplay=1" title="Marie en Laurence voor Kleenex"><div class="img_tp"><img width="363" height="363" alt="Marie en Laurence voor Kleenex" data-lazy="/images/pubs/small/kleenex.jpg"></div><div class="overlay_cont"><h3>Kleenex</h3><p>Marie en Laurence voor Kleenex</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/victor-standaardboekhandel.jpg" title="Victor (2679) voor Standaard Boekhandel"><div class="img_tp"><img width="363" height="363" alt="Victor (2679) voor Standaard Boekhandel" data-lazy="/images/pubs/small/victor-standaardboekhandel.jpg"></div><div class="overlay_cont"><h3>Standaard Boekhandel</h3><p>Victor (2679) voor Standaard Boekhandel</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/belfius-marleen.jpg" title="Marleen (509) voor Belfius"><div class="img_tp"><img width="363" height="363" alt="Marleen (509) voor Belfius" data-lazy="/images/pubs/small/belfius-marleen.jpg"></div><div class="overlay_cont"><h3>Belfius</h3><p>Marleen (509) voor Belfius</p></div></a>
+                </div><div>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/ZSWsAn7sxSQ?autoplay=1" title="Sylviane (437), Michiel (2340), Frank (2462), Rune (2964), Elise (3009), Bruno (3033) en Loreen (3325) voor Bokrijk"><div class="img_tp"><img width="363" height="363" alt="Sylviane (437), Michiel (2340), Frank (2462), Rune (2964), Elise (3009), Bruno (3033) en Loreen (3325) voor Bokrijk" data-lazy="/images/pubs/small/bokrijk.jpg"></div><div class="overlay_cont"><h3>Bokrijk</h3><p>Sylviane (437), Michiel (2340), Frank (2462), Rune (2964), Elise (3009), Bruno (3033) en Loreen (3325) voor Bokrijk</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/fgVchOTYh4I?autoplay=1" title="Addy, Jente, Nore, Louise, Luka, Tanguy, Michiel en René voor Het Laatste Nieuws & Samson en Gert Kerstshow"><div class="img_tp"><img width="363" height="363" alt="Addy, Jente, Nore, Louise, Luka, Tanguy, Michiel en René voor Het Laatste Nieuws & Samson en Gert Kerstshow" data-lazy="/images/pubs/small/hln_samsongert.jpg"></div><div class="overlay_cont"><h3>HLN - Samson en Gert Kerstshow</h3><p>Addy, Jente, Nore, Louise, Luka, Tanguy, Michiel en René voor Het Laatste Nieuws & Samson en Gert Kerstshow</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/base.jpg" title="Dede (2533) en Amy (2671) voor Base"><div class="img_tp"><img width="363" height="363" alt="Dede (2533) en Amy (2671) voor Base" data-lazy="/images/pubs/small/base.jpg"></div><div class="overlay_cont"><h3>Base</h3><p>Dede (2533) en Amy (2671) voor Base</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/111111a.jpg" title="Carlo (3163) en Carlos (2531) voor 11.11.11"><div class="img_tp"><img width="363" height="363" alt="Carlo (3163) en Carlos (2531) voor 11.11.11" data-lazy="/images/pubs/small/111111a.jpg"></div><div class="overlay_cont"><h3>11.11.11.</h3><p>Carlo (3163) en Carlos (2531) voor 11.11.11</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/casteelken.jpg" title="Linda (2316) en Vakil (1003) voor 't Casteelken"><div class="img_tp"><img width="363" height="363" alt="Linda (2316) en Vakil (1003) voor 't Casteelken" data-lazy="/images/pubs/small/casteelken.jpg"></div><div class="overlay_cont"><h3>'t Casteelken</h3><p>Linda (2316) en Vakil (1003) voor 't Casteelken</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/ING.jpg" title="Hannes (2688) voor ING"><div class="img_tp"><img width="363" height="363" alt="Hannes (2688) voor ING" data-lazy="/images/pubs/small/ING.jpg"></div><div class="overlay_cont"><h3>ING</h3><p>Hannes (2688) voor ING</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/111111c.jpg" title="Dede (2533) voor 11.11.11."><div class="img_tp"><img width="363" height="363" alt="Dede (2533) voor 11.11.11." data-lazy="/images/pubs/small/111111c.jpg"></div><div class="overlay_cont"><h3>11.11.11.</h3><p>Dede (2533) voor 11.11.11.</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/geertjoostens.jpg" title="Louise (2336) bij Geert Joostens"><div class="img_tp"><img width="363" height="363" alt="Louise (2336) bij Geert Joostens" data-lazy="/images/pubs/small/geertjoostens.jpg"></div><div class="overlay_cont"><h3>Geert Joostens</h3><p>Louise (2336) bij Geert Joostens</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/partnergeweld.jpg" title="Simon (2537) voor de Vlaamse Overheid"><div class="img_tp"><img width="363" height="363" alt="Simon (2537) voor de Vlaamse Overheid" data-lazy="/images/pubs/small/partnergeweld.jpg"></div><div class="overlay_cont"><h3>Vlaamse Overheid</h3><p>Simon (2537) voor de Vlaamse Overheid</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/belenbo.jpg" title="Petra (973), Els (1399) en Nora (2408) voor Bel en Bo"><div class="img_tp"><img width="363" height="363" alt="Petra (973), Els (1399) en Nora (2408) voor Bel en Bo" data-lazy="/images/pubs/small/belenbo.jpg"></div><div class="overlay_cont"><h3>Bel en Bo</h3><p>Petra (973), Els (1399) en Nora (2408) voor Bel en Bo</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/NMBS.jpg" title="Jan (2482) voor de NMBS"><div class="img_tp"><img width="363" height="363" alt="Jan (2482) voor de NMBS" data-lazy="/images/pubs/small/NMBS.jpg"></div><div class="overlay_cont"><h3>NMBS</h3><p>Jan (2482) voor de NMBS</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/5PwDn51n-5g?autoplay=1" title="Sofie (2118), Bowie (2301) en Miu (2485) voor het Belgische Leger"><div class="img_tp"><img width="363" height="363" alt="Sofie (2118), Bowie (2301) en Miu (2485) voor het Belgische Leger" data-lazy="/images/pubs/small/defensie.jpg"></div><div class="overlay_cont"><h3>Belgische Leger</h3><p>Sofie (2118), Bowie (2301) en Miu (2485) voor het Belgische Leger</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/hoya1.jpg" title="Nanouche (2016), Sophie (758), Alex (1993) en Philippe (2588) voor Hoya"><div class="img_tp"><img width="363" height="363" alt="Nanouche (2016), Sophie (758), Alex (1993) en Philippe (2588) voor Hoya" data-lazy="/images/pubs/small/hoya1.jpg"></div><div class="overlay_cont"><h3>Hoya</h3><p>Nanouche (2016), Sophie (758), Alex (1993) en Philippe (2588) voor Hoya</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/kbc.jpg" title="Michael (861) en Joelle (2474) voor KBC"><div class="img_tp"><img width="363" height="363" alt="Michael (861) en Joelle (2474) voor KBC" data-lazy="/images/pubs/small/kbc.jpg"></div><div class="overlay_cont"><h3>KBC</h3><p>Michael (861) en Joelle (2474) voor KBC</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/vivre.jpg" title="Hilde (2192) voor Vivre"><div class="img_tp"><img width="363" height="363" alt="Hilde (2192) voor Vivre" data-lazy="/images/pubs/small/vivre.jpg"></div><div class="overlay_cont"><h3>Vivre</h3><p>Hilde (2192) voor Vivre</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/asadventure.jpg" title="Nina, Lynn, Elliott en Okke voor A.S. Adventure"><div class="img_tp"><img width="363" height="363" alt="Nina, Lynn, Elliott en Okke voor A.S. Adventure" data-lazy="/images/pubs/small/asadventure.jpg"></div><div class="overlay_cont"><h3>A.S. Adventure</h3><p>Nina, Lynn, Elliott en Okke voor A.S. Adventure</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/constamed.jpg" title="Patrick (1811) en Marieke (2454) voor Constamed"><div class="img_tp"><img width="363" height="363" alt="Patrick (1811) en Marieke (2454) voor Constamed" data-lazy="/images/pubs/small/constamed.jpg"></div><div class="overlay_cont"><h3>Constamed.nl</h3><p>Patrick (1811) en Marieke (2454) voor Constamed</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/sdworx.jpg" title="Filip (1120) voor SD Worx"><div class="img_tp"><img width="363" height="363" alt="Filip (1120) voor SD Worx" data-lazy="/images/pubs/small/sdworx.jpg"></div><div class="overlay_cont"><h3>SD Worx</h3><p>Filip (1120) voor SD Worx</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/maxomorra.jpg" title="Yréo, Maura, Alegria, Ayiana, Mahaut, Shanael, Els, Nore, Victor en Gregor voor Maxomorra"><div class="img_tp"><img width="363" height="363" alt="Yréo, Maura, Alegria, Ayiana, Mahaut, Shanael, Els, Nore, Victor en Gregor voor Maxomorra" data-lazy="/images/pubs/small/maxomorra.jpg"></div><div class="overlay_cont"><h3>Maxomorra</h3><p>Yréo, Maura, Alegria, Ayiana, Mahaut, Shanael, Els, Nore, Victor en Gregor voor Maxomorra</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/evergreen.jpg" title="René (2788) voor Evergreen"><div class="img_tp"><img width="363" height="363" alt="René (2788) voor Evergreen" data-lazy="/images/pubs/small/evergreen.jpg"></div><div class="overlay_cont"><h3>Evergreen</h3><p>René (2788) voor Evergreen</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/goforzero.jpg" title="Melody en AloÃ¯se (2024) voor de Vlaamse Verkeersveiligheid"><div class="img_tp"><img width="363" height="363" alt="Melody en AloÃ¯se (2024) voor de Vlaamse Verkeersveiligheid" data-lazy="/images/pubs/small/goforzero.jpg"></div><div class="overlay_cont"><h3>Vlaamse Verkeersveiligheid</h3><p>Melody en Aloïse (2024) voor de Vlaamse Verkeersveiligheid</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/lolaliza.jpg" title="Els (1399) en Dakota (2113) voor Lola Liza"><div class="img_tp"><img width="363" height="363" alt="Els (1399) en Dakota (2113) voor Lola Liza" data-lazy="/images/pubs/small/lolaliza.jpg"></div><div class="overlay_cont"><h3>Lola Liza</h3><p>Els (1399) en Dakota (2113) voor Lola Liza</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/NiKTzCBlbGg?autoplay=1" title="Jeroen (2453) en Annelies (2250) voor Prik en Tik "><div class="img_tp"><img width="363" height="363" alt="Jeroen (2453) en Annelies (2250) voor Prik en Tik " data-lazy="/images/pubs/small/prikentik.jpg"></div><div class="overlay_cont"><h3>Prik en Tik</h3><p>Jeroen (2453) en Annelies (2250) voor Prik en Tik </p></div></a>
+                    <a class="image_container" href="/images/pubs/large/olvarit.jpg" title="Maxime (2221) voor Olvarit"><div class="img_tp"><img width="363" height="363" alt="Maxime (2221) voor Olvarit" data-lazy="/images/pubs/small/olvarit.jpg"></div><div class="overlay_cont"><h3>Olvarit</h3><p>Maxime (2221) voor Olvarit</p></div></a>
+                </div><div>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/JSH8WQMrWho?autoplay=1" title="Marleen (509) voor Colgate"><div class="img_tp"><img width="363" height="363" alt="Marleen (509) voor Colgate" data-lazy="/images/pubs/small/colgate.jpg"></div><div class="overlay_cont"><h3>Colgate</h3><p>Marleen (509) voor Colgate</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/GVA-Annelies.jpg" title="Annelies (2250) voor Gazet van Antwerpen"><div class="img_tp"><img width="363" height="363" alt="Annelies (2250) voor Gazet van Antwerpen" data-lazy="/images/pubs/small/GVA-Annelies.jpg"></div><div class="overlay_cont"><h3>Gazet van Antwerpen</h3><p>Annelies (2250) voor Gazet van Antwerpen</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/smartgames.jpg" title="Kenji (1919) voor Smart Games"><div class="img_tp"><img width="363" height="363" alt="Kenji (1919) voor Smart Games" data-lazy="/images/pubs/small/smartgames.jpg"></div><div class="overlay_cont"><h3>Smartgames</h3><p>Kenji (1919) voor Smart Games</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/jenevermuseum.jpg" title="Anneke (2460) voor het Jenevermuseum"><div class="img_tp"><img width="363" height="363" alt="Anneke (2460) voor het Jenevermuseum" data-lazy="/images/pubs/small/jenevermuseum.jpg"></div><div class="overlay_cont"><h3>Jenevermuseum</h3><p>Anneke (2460) voor het Jenevermuseum</p></div></a>
+                    <a class="image_container fancybox.iframe" href="https://www.youtube.com/embed/X5SFyEmzkt4?autoplay=1" title="Jan (2482) voor Joe FM"><div class="img_tp"><img width="363" height="363" alt="Jan (2482) voor Joe FM" data-lazy="/images/pubs/small/joefm.jpg"></div><div class="overlay_cont"><h3>Joe FM</h3><p>Jan (2482) voor Joe FM</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/Plus-Magazine-marleen.jpg" title="Marleen (509) voor Plus Magazine"><div class="img_tp"><img width="363" height="363" alt="Marleen (509) voor Plus Magazine" data-lazy="/images/pubs/small/Plus-Magazine-marleen.jpg"></div><div class="overlay_cont"><h3>Plus Magazine</h3><p>Marleen (509) voor Plus Magazine</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/axe.jpg" title="Margriet (1638) en Tanguy (2168) voor Axe en Dove"><div class="img_tp"><img width="363" height="363" alt="Margriet (1638) en Tanguy (2168) voor Axe en Dove" data-lazy="/images/pubs/small/axe.jpg"></div><div class="overlay_cont"><h3>Axe en Dove</h3><p>Margriet (1638) en Tanguy (2168) voor Axe en Dove</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/samsung.jpg" title="Flandrien Frank voor Samsung"><div class="img_tp"><img width="363" height="363" alt="Flandrien Frank voor Samsung" data-lazy="/images/pubs/small/samsung.jpg"></div><div class="overlay_cont"><h3>Samsung</h3><p>Flandrien Frank voor Samsung</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/lotus.jpg" title="Nienke (1358) voor Lotus"><div class="img_tp"><img width="363" height="363" alt="Nienke (1358) voor Lotus" data-lazy="/images/pubs/small/lotus.jpg"></div><div class="overlay_cont"><h3>Lotus</h3><p>Nienke (1358) voor Lotus</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/telenet.jpg" title="Sven (1108), Sofie (2118), Kenji (1919) en Bowie (2301) voor Telenet"><div class="img_tp"><img width="363" height="363" alt="Sven (1108), Sofie (2118), Kenji (1919) en Bowie (2301) voor Telenet" data-lazy="/images/pubs/small/telenet.jpg"></div><div class="overlay_cont"><h3>Telenet</h3><p>Sven (1108), Sofie (2118), Kenji (1919) en Bowie (2301) voor Telenet</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/cokelight.jpg" title="Coca-Cola Light"><div class="img_tp"><img width="363" height="363" alt="Coca-Cola Light" data-lazy="/images/pubs/small/cokelight.jpg"></div><div class="overlay_cont"><h3>Coca-Cola Light</h3><p>Coca-Cola Light</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/GVA2.jpg" title="Noël (1043) voor Gazet van Antwerpen"><div class="img_tp"><img width="363" height="363" alt="Noël (1043) voor Gazet van Antwerpen" data-lazy="/images/pubs/small/GVA2.jpg"></div><div class="overlay_cont"><h3>Gazet van Antwerpen</h3><p>Noël (1043) voor Gazet van Antwerpen</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/casteelken2.jpg" title="Sandra en Sven voor 't Casteelken"><div class="img_tp"><img width="363" height="363" alt="Sandra en Sven voor 't Casteelken" data-lazy="/images/pubs/small/casteelken2.jpg"></div><div class="overlay_cont"><h3>t Casteelken</h3><p>Sandra en Sven voor 't Casteelken</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/nike.jpg" title="Rani voor Nike"><div class="img_tp"><img width="363" height="363" alt="Rani voor Nike" data-lazy="/images/pubs/small/nike.jpg"></div><div class="overlay_cont"><h3>Nike</h3><p>Rani voor Nike</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/mariel.jpg" title="Eva (1567) voor Marie L"><div class="img_tp"><img width="363" height="363" alt="Eva (1567) voor Marie L" data-lazy="/images/pubs/small/mariel.jpg"></div><div class="overlay_cont"><h3>Marie L</h3><p>Eva (1567) voor Marie L</p></div></a>
+                </div><div>
+                    <a class="image_container" href="/images/pubs/large/111111a.jpg" title="Carlo (3163) en Carlos (2531) voor 11.11.11"><div class="img_tp"><img width="363" height="363" alt="Carlo (3163) en Carlos (2531) voor 11.11.11" data-lazy="/images/pubs/small/111111a.jpg"></div><div class="overlay_cont"><h3>11.11.11.</h3><p>Carlo (3163) en Carlos (2531) voor 11.11.11</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/111111b.jpg" title="Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11"><div class="img_tp"><img width="363" height="363" alt="Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11" data-lazy="/images/pubs/small/111111b.jpg"></div><div class="overlay_cont"><h3>11.11.11.</h3><p>Fred (3123), Dian (1582) en Hannah (3145) voor 11.11.11</p></div></a>
+                    <a class="image_container" href="/images/pubs/large/ING.jpg" title="Hannes (2688) voor ING"><div class="img_tp"><img width="363" height="363" alt="Hannes (2688) voor ING" data-lazy="/images/pubs/small/ING.jpg"></div><div class="overlay_cont"><h3>ING</h3><p>Hannes (2688) voor ING</p></div></a>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="carousel_single" id="talent_sec">
+
+        <section id="owl-demo1">
+            <div class="homepage-slide">
+                <div class="homepage-slide-wrapper">
+                    <div class="slick-image-section"><img alt="homepage model 1" class="slick-image" src="/images/homepagemodel_01.png"></div>
+                    <section class="talent_sec_one homepage-model-1">
+                        <div class="container">
+                            <h2>{$taalContent['homepage']['slider_sec']['slider_1']['title']}</h2>
+                            <p>{$taalContent['homepage']['slider_sec']['slider_1']['subtitle']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_1']['p_1']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_1']['p_2']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_1']['p_3']}</p>
+                        </div>
+                    </section>
+                    <div class="container_lg"><a href="/{$taal}"><img alt="logo purple" src="/images/logo_purple.png"></a></div>
+                </div>
+            </div>
+
+            <div class="homepage-slide">
+                <div class="homepage-slide-wrapper">
+                    <div class="slick-image-section"><img alt="homepage model 2" class="slick-image" src="/images/homepagemodel_02.png"></div>
+                    <section class="talent_sec_one homepage-model-2">
+                        <div class="container">
+                            <h2>{$taalContent['homepage']['slider_sec']['slider_2']['title']}</h2>
+                            <p>{$taalContent['homepage']['slider_sec']['slider_2']['p_1']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_2']['p_2']}</p>
+                            <a id="become_vip" class="meld_btn" href="/{$taal}/vip">{$taalContent['homepage']['slider_sec']['slider_2']['a']}</a>
+                        </div>
+                    </section>
+                    <div class="container_lg"><a href="/{$taal}"><img alt="logo green" src="/images/logo_green.png"></a></div>
+                </div>
+            </div>
+
+            <div class="homepage-slide">
+                <div class="homepage-slide-wrapper">
+                    <div class="slick-image-section"><img alt="homepage model 4" class="slick-image" src="/images/homepagemodel_04.png"></div>
+                    <section class="talent_sec_one homepage-model-3">
+                        <div class="container">
+                            <h2>{$taalContent['homepage']['slider_sec']['slider_3']['title']}</h2>
+                            <p>{$taalContent['homepage']['slider_sec']['slider_3']['subtitle']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_3']['p_1']}</p>
+                            <a id="become_vip" class="meld_btn" href="/{$taal}/casting">{$taalContent['homepage']['slider_sec']['slider_3']['a']}</a>
+                        </div>
+                    </section>
+                    <div class="container_lg"><a href="/{$taal}"><img alt="logo pink" src="/images/logo_pink.png"></a></div>
+                </div>
+            </div>
+
+            <div class="homepage-slide">
+                <div class="homepage-slide-wrapper">
+                    <div class="slick-image-section"><img class="slick-image" alt="homepage model 3" src="/images/homepagemodel_03.png"></div>
+                    <section class="talent_sec_one homepage-model-4">
+                        <div class="container">
+                            <h2>{$taalContent['homepage']['slider_sec']['slider_4']['title']}</h2>
+                            <p>{$taalContent['homepage']['slider_sec']['slider_4']['subtitle']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_4']['p_1']}</p>
+                            <p class="fnt-15">{$taalContent['homepage']['slider_sec']['slider_4']['p_2']}<br><br></p>
+                            <a id="become_vip" class="meld_btn" href="http://inschrijven.castingteam.com" target="_blank">{$taalContent['homepage']['slider_sec']['slider_4']['a']}</a>
+                        </div>
+                    </section>
+                    <div class="container_lg"><a href="/{$taal}"><img alt="logo orange" src="/images/logo_orange.png"></a></div>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+<!-- END: MAIN CONTENT --> 
+
+{include file='site/footer.tpl'}

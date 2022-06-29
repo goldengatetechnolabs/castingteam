@@ -1,0 +1,1 @@
+<a href="javascript:getModelEmail({$id})" class="button new pdng">Get Email</a>

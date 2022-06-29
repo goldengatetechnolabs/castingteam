@@ -1,0 +1,270 @@
+
+<!-- SET: SCRIPTS --> 
+<script type="text/javascript">var taal = '{$taal}'</script>
+<script type="text/javascript" src="/js/site/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/site/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="/js/site/jquery.fancybox-buttons.js"></script>
+<script type="text/javascript" src="/js/site/jquery.fancybox-media.js"></script>
+<script type="text/javascript" src="/js/site/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript" src="/js/site/slick.min.js"></script>
+<script type="text/javascript" src="/js/functions.js"></script> 
+<script type="text/javascript" src="/js/site/main.js"></script> 
+<script type="text/javascript" src="/js/site/ajax.js"></script>
+
+{literal}
+  <script type="text/javascript">
+    var messages = {};
+    messages.error = {};
+    messages.notice = {};
+    messages.error.imageNotAvailable = "{/literal}{$taalContent['messages']['error']['image_error']}{literal} <a id='poppup_alert_link' href='/" + taal + "/vip'>castingteam.com/" + taal + "/vip</a>";
+    messages.error.fieldEmpty = {/literal}"{$taalContent['messages']['error']['fields_empty']}"{literal};
+    messages.error.iternal = {/literal}"{$taalContent['messages']['error']['iternal']}"{literal};
+    messages.notice.registration = {/literal}"{$taalContent['messages']['info']['registration']}"{literal};
+    messages.notice.mailSent = {/literal}"{$taalContent['messages']['info']['mail_sent']}"{literal};
+    messages.notice.selectionAdded = {/literal}"{$taalContent['messages']['info']['selection_added']}"{literal};
+    messages.notice.selectionAddedTest = {/literal}"{$taalContent['messages']['info']['selection_added_text']}"{literal};
+  </script>
+{/literal}
+
+{if $current_page eq 'homepage'}
+{literal}
+<script type="text/javascript">//<![CDATA[
+
+  $(document).ready(function () {
+
+    $(".index_top_nav ul li a.no_scroll").each(function() {
+      var href = $(this).attr('href');
+      $(this).attr('onclick', "window.location='" + href + "'")
+           
+    });
+
+    $('.category-active').click(function() {
+      toggleCategory($(this).next('ul'));
+    });
+    
+    $(".close_icon,.top_contact").click(function(e) {
+      $(".top_header").slideToggle(300);
+      $(".index_page").toggleClass('open_drop');
+    });
+      
+    $(".image_container").fancybox({
+        helpers: {
+        title : {
+        }
+      }
+    });
+      
+    $('#owl-demo1').slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 1,
+      slidesToScroll: 1, 
+      infinite:false
+    });
+      
+    $('.gall_carousel').slick({
+      lazyLoad: 'ondemand',
+      slidesToShow: 7,
+      slidesToScroll: 2,
+      infinite:false,
+      variableWidth: true,
+    
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2
+          
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]  
+     
+    });
+
+    $('#main-categories li').click(function(){
+      toggleCategory($(this).parent());
+      $('.category-active strong').text($(this).text());
+      $('.category-active').attr('data-id', $(this).attr('data-id'));
+      $('#current-category-search').val($(this).attr('data-id'));
+    });
+
+//
+//    $("#search-phrase").autocomplete(
+//            "/api/search/autocomplete",
+//            {
+//              delay:150,
+//              minChars:2,
+//              cache:true
+//            }
+//    );
+  });
+
+  $(window).load(function() {
+    $(".banner").fadeOut(3000);
+    $("#bgvid").fadeIn(3000);
+    var winwidth = $(window).width();
+    var winheight = $(window).height();
+    $('.js-video,.banner img').css({'height': winheight-84, 'width': winwidth});
+  });
+
+
+  $(window).resize(function() {
+    var winwidth = $(window).width();
+    var winheight = $(window).height();
+    $('.js-video,.banner img').css({'height': winheight-84, 'width': winwidth});
+
+  });
+
+</script> 
+
+{/literal}
+<script type="text/javascript" src="/js/site/jquery.singlePageNav.min.js"></script>
+{literal}
+
+<script type="text/javascript">
+
+  $('.index_top_nav').singlePageNav({
+    filter: ':not(.external)',
+    speed:1000,
+    updateHash: true,
+    beforeStart: function() {
+    },
+    onComplete: function() {
+    }
+  }); 
+
+</script>
+
+<script type="text/javascript">
+
+  var imgsrc = $('.banner img').attr('src');
+  $('.banner img').css('opacity','0');
+  $('.banner').css('background-image','url(' + imgsrc + ')');
+  $('.banner').css('background-position','center center');
+  $('.banner').css('background-size','cover');
+        
+</script>
+
+{/literal}
+
+{else}
+<script src='/js/site/jquery.minimalist.collapse.js'></script> 
+<script src="/js/site/imagesloaded.pkgd.min.js"></script>
+<script src="/js/site/jquery.infinitescroll.min.js"></script> 
+<script src="/js/site/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/js/site/fontsmoothie.min.js" async></script> 
+
+{literal}
+<script type="text/javascript"> 
+  
+$(document).ready(function () {
+
+  $('.fancybox_image').fancybox({
+    tpl: {
+      next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span class="button-next"></span></a>',
+      prev     : '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="button-prev"></span></a>'
+    },
+    'nextEffect': 'none',
+    'prevEffect': 'none'
+  });
+
+  $('.modal_dtls_popup .top_links_pop a.voeg_card').click(function(e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $('.add_model_sel').slideToggle();
+  });
+
+  $('body').on('click', '.voeg_card', function(e) {
+    $(".selections-single").toggle();
+    e.preventDefault();
+  });
+
+  $("body").delegate("#close_button", "click", function() {
+    $("body .featherlight").remove();
+    $('body').css('overflow', 'none');
+    $('html').css('overflow-x', 'hidden');
+    window.history.back();
+  });
+
+  $("body").delegate("#add_selection", "click", function() {
+    var selection_name = $('.selections-single #selection_name').val();
+    var selection = $('#selection_select').val();
+    var model_id = $(this).attr('data-id');
+
+    if (selection || selection_name) {
+      addModelToSelection(model_id, selection_name, selection);
+    }
+  });
+
+  $('body').on('click', '.image_alert', function() {
+    if (counter() < 2) {
+      jAlert(1, messages.error.imageNotAvailable);
+    }
+  });
+
+  $('.close_icon,.top_contact').click(function(e) {
+    $('.top_header').slideToggle(300);
+    $('.index_page').toggleClass('open_drop');
+  });
+
+    $menuLeft = $('.pushmenu-left');
+    $nav_list = $('#nav_list');
+
+    $nav_list.click(function() {
+      $(this).toggleClass('active');
+      $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+      $menuLeft.toggleClass('pushmenu-open');
+    });
+    
+  $('.minimalist-collapse').mcollapse();
+
+    
+  $('.filter_top .filter_top_rht a.diff_view').click(function(e) {
+    $(this).addClass('active').siblings('a.diff_view').removeClass('active');
+    $('.close_icon,.top_contact').click(function(e) {
+      $('.top_header').slideToggle();
+      $('.index_page').toggleClass('open_drop');
+    });
+  });
+    
+  $('.list_view').click(function(e) {
+    e.preventDefault();
+    $('.main2').show(500);
+    $('.main1').hide(500);
+    $(this).parents('.content').addClass('no_pad_cont');    
+  });
+
+  $('.grid_view').click(function(e) {
+    e.preventDefault();  
+    $('.main1').show(500);
+    $('.main2').hide(500);
+    $(this).parents('.content').removeClass('no_pad_cont');  
+  });
+    
+});
+        
+$(window).load(function() {
+  $('.main_content.inner_content').delay(800).animate({
+    "opacity": 1
+  });
+});
+
+</script>
+{/literal}
+{/if}
+
+<!-- END: SCRIPTS -->

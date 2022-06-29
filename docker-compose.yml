@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  castingteam:
+    container_name: castingteam
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - castingteam-mysql
+
+  castingteam-mysql:
+    container_name: castingteam-mysql
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+    ports:
+      - 3307:3306
+    volumes:
+      - castingteam-data:/var/lib/mysql
+
+volumes:
+  castingteam-data:
+    external: true

@@ -1,0 +1,1 @@
+<a href="javascript:getModelPhone({$id})" class="button new pdng">Get Phone</a>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{$taal}">
+  <head>
+    <title>Castingteam - {$pageTitle}</title>
+    <meta http-equiv="Cache-Control" content="public" />
+    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
+    <meta charset="UTF-8">
+    <meta name="description" content="{$taalContent['header']['description']}">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="all" />
+    <link href="https://plus.google.com/108937195139060877177" rel="publisher">
+
+    {if isset($model)}
+    <meta property="og:url"                content="http://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="{$model['voornaam']} bij Castingteam" />
+    <meta property="og:description"        content="Castingteam is een casting -en modellenbureau met duizenden getalenteerde people, modellen, acteurs en actrices, kids & teens, seniors en specials. " />
+    {if isset($model['images'][0])}
+    <meta property="og:image"              content="http://{$smarty.server.HTTP_HOST}/models/{$model['model_id']}/website/thumbs/{$model['images'][0]['id']}.jpg" />
+    {/if}
+    {/if}
+    {include file='site/css_links.tpl'}
+    {include file='site/js_links.tpl'}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {include file='site/facebook/pixel.tpl'}
+  </head>
+  <body {if !isset($user)}class="copyright"{/if}>
+  {include file='site/analyticstracking.tpl'}
+  {include file='site/social_detection_schema.tpl'}
+  {include file='site/microdata.tpl'}
+  {include file='site/components/notify-message.tpl'}
+  <div id="fb-root"></div>
+    <div class="wrapper">
+      {literal}
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $('#header .menu_right ul .light-up-element').hover(lightUpHeaderElement);
+            $('#header .menu_right ul .light-up-element').click(lightUpHeaderElement);
+          });
+        </script>
+      {/literal}
+      {if $current_page eq 'homepage'}
+      {literal}
+      <script type="text/javascript">
+
+      $(document).ready(function() {
+        getEmails();
+        displayNotifyMessage();
+
+        $(document).mouseup(function (e) {
+          if ($(".menu").is(":visible")) {
+            var container = $(".menu,header");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+              toggleMenu(false);
+            }
+          }
+        });
+        
+        $(".display_menu span, .menu_left .display_menu").click(function(e) {
+          toggleMenu(false);
+          e.preventDefault();
+        });
+      });
+      </script>
+      {/literal}
+
+      <header id="header" class="index_page">
+        <div class="menu_right">
+          <ul>
+            <li class="display_menu light-up-element">
+              <span>{$countries[$smarty.session.country]}   <i class="fa fa-angle-down"></i></span>
+              {include file='site/header/country-list.tpl'}
+            </li>
+            <li class="light-up-element">{$phones[$smarty.session.country]} <span class="underlined_text"> <a id={$mail_hook}" class="{$mail_hook}" href="mailto:">mail ons</a></span></li>
+            <li class="display_menu user-registration-panel light-up-element"><span>{if isset($user)}{$taalContent['header']['login']['welcome']} {$user['name']} {else}<a id="show_log_in" href="#">{$taalContent['header']['login']['login']}</a>{/if} <i class="fa fa-angle-down"></i></span>
+              {include file='site/header/login_block.tpl'}
+            </li>
+            <li class="model-registration-link light-up-element"><a id="model_registration" href="/{$taal}/register/0"   target="_blank">{$taalContent['header']['login']['registration']}{if !isset($user)}{include file='site/tooltip.tpl'}{/if}</a></li>
+          </ul>
+        </div>
+        <div class="menu_left">
+          <img class="display_menu" alt="Menu Image" id="menu_image" src="/images/menu_image.png">
+          <img class="display_menu" alt="New Logo" id="logo" src="/images/logo-new.png">
+        </div>
+        <ul class="mobile_logo">
+          <li>
+            <img id="logo" alt="mobile logo" class="display_menu" src="/images/logo-new.png">
+          </li>
+          <li>{$phones[$smarty.session.country]} <span class="underlined_text"><a id="{$mail_hook}" class="{$mail_hook}" href="mailto:" >{$taalContent['header']['login']['mail_to']}</a></span></li>
+        </ul>
+      </header>
+      {include file='site/header/page_links_block.tpl'}
+    <i class="clear_0"></i>
+    <section id="video_section" class="index_banner">
+      <div class="video-wrapper">
+      <div class="js-video">
+        <!-- <video autoplay loop  preload="auto"   id="bgvid">
+          <source src="{$video.ogv}" type="video/ogv">
+          <source src="{$video.mp4}" type="video/mp4">
+        </video> -->
+        <video autoplay muted loop preload="auto" id="bgvid">
+          <source src="{$video.mp4}" type="video/mp4">
+          <source src="{$video.webm}" type="video/webm">
+          <source src="{$video.ogv}" type="video/ogg">
+        </video>
+      <span class="banner"><img src="images/white.jpg" alt="banner" width="1632" height="935" border="0">       
+      <span class="loader_icon"></span>
+      </div>
+    </div>
+      <div class="index_mid">
+        <h1>
+          <strong>{$taalContent.homepage.title}</strong>
+        </h1>
+      </div>
+    </section>
+
+  <!-- END: index_banner -->
+  {else}
+  {literal}
+  <script type="text/javascript">
+
+  $(document).ready(function() {
+
+    getEmails();
+    displayNotifyMessage();
+
+    $(document).mouseup(function (e) {
+      if($(".menu").is(":visible")) {
+        var container = $(".menu,header");
+
+        if (
+                !container.is(e.target) &&
+                container.has(e.target).length === 0
+        ) {
+          toggleMenu(true);
+        }
+      }
+    });
+
+    $(".display_menu span, .menu_left .display_menu").click(function() {
+      toggleMenu(true);
+    });
+  });
+  </script>
+  {/literal}
+  <header id="header" class="index_page">
+    <div class="menu_right">
+      <ul>
+            <li class="display_menu light-up-element"><span>{$countries[$smarty.session.country]}   <i class="fa fa-angle-down"></i></span>
+              {include file='site/header/country-list.tpl'}
+            </li>
+            <li class="light-up-element">{$phones[$smarty.session.country]} <span class="underlined_text"> <a id="{$mail_hook}" class="{$mail_hook}" href="mailto:">mail ons</a></span></li>
+            <li class="display_menu user-registration-panel light-up-element"><span>{if isset($user)}{$taalContent['header']['login']['welcome']} {$user['name']} {else}<a id="show_log_in" href="#">{$taalContent['header']['login']['login']}</a>{/if} <i class="fa fa-angle-down"></i></span>
+              {include file='site/header/login_block.tpl'}
+            </li>
+            <li class="model-registration-link light-up-element"><a href="http://inschrijven.castingteam.com" target="_blank">{$taalContent['header']['login']['registration']}</a></li>
+      </ul>
+    </div>
+    <div class="menu_left">
+      <img class="display_menu" alt="Menu Image" id="menu_image" src="/images/menu_image_black.png">
+      <img id="logo" alt="new logo" class="display_menu" src="/images/logo-new-black.png">
+    </div>
+    <ul class="mobile_logo">
+      <li><img id="logo" alt="logo black" class="display_menu" src="/images/logo-new-black.png"></li>
+      <li>{$phones[$smarty.session.country]} <span class="underlined_text"><a id="{$mail_hook}" class="{$mail_hook}" href="mailto:" >{$taalContent['header']['login']['mail_to']}</a></span></li>
+    </ul>
+  </header>
+      {include file='site/header/page_links_block.tpl'}
+      <i class="clear_0" ></i>
+    <div class="mrgn-130"></div>
+{/if}

@@ -1,0 +1,86 @@
+.floating-bar {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    opacity: .9;
+    background: #fff;
+}
+
+.floating-bar a {
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+.signature {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #777;
+}
+
+.signature a {
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+
+.main {
+    margin-bottom: 20px;
+}
+
+.pagination
+{
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.pagination a {
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+.loading {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+	margin:0 0 95px 0;
+}
+
+#infscr-loading img {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 38px;
+    width: 38px;
+}
+
+#no-infscr-loading span {
+    margin-top: 10px;
+    display: block;
+}
+
+#infscr-loading,#no-infscr-loading {
+    display: inline-block;
+    width: 350px;
+	text-align:center;
+    margin:auto;
+    padding:5px;
+    height:40px;
+    color: #000;
+    background: #ffffff;
+	border:2px solid #000;
+}
+
+#infscr-loading img
+{
+    margin-bottom: 9px;
+}

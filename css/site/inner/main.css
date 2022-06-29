@@ -1,0 +1,131 @@
+
+
+
+
+
+
+.floating-bar
+{
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+
+    width: 100%;
+    padding: 15px;
+
+    text-align: center;
+
+    opacity: .9;
+    background: #fff;
+}
+
+.floating-bar a
+{
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+
+
+.signature
+{
+    margin: 0 0 20px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+.signature a
+{
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+/*
+========================================================================================================================
+[Main]
+========================================================================================================================
+*/
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+[.main]
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.main
+{
+    margin-bottom: 20px;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+[.pagination]
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.pagination
+{
+    margin: 0 0 20px;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+
+.pagination a
+{
+    -webkit-transition: all .3s ease-in;
+       -moz-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+[.loading]
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+.loading
+{
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+	margin:0 0 95px 0;
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+[#infscr-loading]
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+#infscr-loading
+{
+    display: inline-block;
+
+    padding: 11px 5%;
+	text-align:center;
+
+    opacity: .8;
+    color: #749393;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    background: #ffffff;
+	border:2px solid #749393;
+}
+
+#infscr-loading img
+{
+    margin-bottom: 9px;
+}

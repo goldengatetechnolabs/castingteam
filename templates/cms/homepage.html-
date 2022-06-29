@@ -1,0 +1,28 @@
+<h1 class="float">New registrations</h1>
+<div class="lijn gn-margin" style="clear:both"></div>
+{*
+<table id="cms-subscriptions" cellspacing="3" cellpadding="0">
+    {foreach from=$models item=r key=id}
+    <tr>
+        <td class="center" style="width: 90px;">{$r.datum_tonen}</td>
+        <td>{$r.naam} {$r.voornaam}</td>
+        <td><a href="mailto:{$r.email}" class="mail">{$r.email}</a></td>
+        <td class="center button"><a href="/cms/models/models/aanpassen/?id={$id}" class="button grijs klein">View</a></td>
+        <td class="center button"><a href="#" class="button klein">Accept</a></td>
+        <td class="center button"><a href="#" class="button rood klein">Reject</a></td>
+        <!-- <td class="center"><input type="checkbox" /></td> -->
+    </tr>
+    {/foreach}
+</table>
+*}
+<!-- EVENT LOG -->
+<h1>Event log</h1>
+<div class="lijn gn-margin"></div>
+<div id="cms-eventlog">
+    <p>Today {if $tel_nieuw==1}there is{else}there are{/if} <strong>{$tel_nieuw}</strong> new subscription{if $tel_nieuw<>1}s{/if} and <strong>{$tel_aangepast}</strong> {if $tel_aangepast==1} person {else} people {/if} {if $tel_aangepast==1} has updated his / her details {else} have updated their details{/if}.</p>
+    <ul>
+        {foreach from=$log item=r key=id}
+        <li>{$r.datum} - <strong>{$r.voornaam} {$r.naam}</strong>: {$r.bericht} <a href="/cms/models/models/aanpassen/?id={$r.id_model}">View</a></li>
+        {/foreach}
+    </ul>
+</div>

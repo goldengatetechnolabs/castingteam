@@ -1,0 +1,68 @@
+<!-- SET: FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="ft_top_sec">
+      <div class="socialicon_Sec">
+        <ul>
+          <li><a href="http://www.facebook.com/mycastingteam" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="http://www.twitter.com/mycastingteam" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/castingteam" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+          <li><a href="http://www.instagram.com/castingteam" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="ft_mid_sec">
+      <div class="left_sec">
+        <div class="ft_links">
+          <h3><strong>{$taalContent['footer']['title_1']}</strong></h3>
+          <ul>
+            {foreach from=$categories key=k item=category}
+            {if $k<7}
+              <li><a href="/{$taal}/{$taalContent['navigation'][$category['codename']]}/">{$taalContent['categories'][$category['category_id']]}</a></li>
+            {/if}
+            {/foreach}
+          </ul>
+          <div class="searc_box clearfix">
+            {include file='site/search.tpl'}
+          </div>
+        </div>
+        <div class="ft_links">
+          <h3><strong>{$taalContent['footer']['title_2']}</strong></h3>
+          {include file='site/components/links.tpl'}
+        </div>
+        <div class="ft_links ft_land">
+          <h3><strong>{$taalContent['footer']['title_3']}</strong></h3>
+          <ul>
+            <li>
+              <p><i class="fa fa-phone"></i>  03 / 773 52 00 - <span class="underlined_text"><a id="info_be" class="info_be" href="mailto:"></a></span></p>
+              <p>Broederminstraat 7, 2018 Antwerpen</p>
+            </li>
+            <li>
+              <h3><strong>{$taalContent['footer']['title_4']}</strong></h3>
+              <p><i class="fa fa-phone"></i>  085 130 18 12 - <span class="underlined_text"><a id="info_nl" class="info_nl" href="mailto:"></a></span></p>
+              <p>Postbus 26032, 3002 EA Rotterdam</p>
+            </li>
+          </ul>
+        </div>
+        <div class="ft_links"><p class="p_right_align">{$taalContent['footer']['policy']}<a class="white-underlined" href="/{$taal}/conditions">{$taalContent['footer']['policy_a']}</a> {$taalContent['footer']['policy_end']}<script language="javascript" type="text/javascript">
+        var today = new Date()
+        var year = today.getFullYear()
+        document.write(year)
+        </script><br>
+        <a class="white-underlined" href="/{$taal}/conditions#conditions"></a>{$taalContent['footer']['copyright']} - <a class="white-underlined" href="/{$taal}/conditions#disclaimer">{$taalContent['footer']['disclaimer']}</a></p></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</footer>
+<!-- END: FOOTER -->
+</div>
+<!-- END: WRAPPER -->
+
+
+
+
+</body>
+</html>

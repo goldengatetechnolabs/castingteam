@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /cms/
+Disallow: /nl/partner-promo-hostessen
+Disallow: /nl/partner-fashion
+Disallow: /nl/partner-bruxelles-wallonie
+Disallow: /nl/partner-nederland
+Disallow: /fr/partner-promo-hostessen
+Disallow: /fr/partner-fashion
+Disallow: /fr/partner-bruxelles-wallonie
+Disallow: /fr/partner-nederland
+Disallow: /en/partner-promo-hostessen
+Disallow: /en/partner-fashion
+Disallow: /en/partner-bruxelles-wallonie
+Disallow: /en/partner-nederland
+Sitemap: http://www.castingteam.com/sitemap.xml

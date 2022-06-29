@@ -1,0 +1,11 @@
+<ul>
+    <li><a href="/{$taal}">{$taalContent['links']['homepage']}</a></li>
+    <li><a href="/{$taal}/{$taalContent.navigation.people}">{$taalContent['links']['people_models']}</a></li>
+    <li><a href="/{$taal}/people">{$taalContent['links']['new_talents']}</a> </li>
+    <li><a href="/{$taal}#carousel_gallery">{$taalContent['links']['carousel_gallery']}</a> </li>
+    <li><a href="/{$taal}#talent_sec">{$taalContent['links']['talent_section']}</a></li>
+    {if !isset($user)}<li><a href="/{$taal}/vip" class="no_scroll">{$taalContent['links']['vip']}</a></li>{/if}
+    <li><a href="/{$taal}/casting">{$taalContent['links']['casting']}</a> </li>
+    <li><a href="/{$taal}/contact">{$taalContent['links']['contact']}</a> </li>
+    <li><a href="http://inschrijven.castingteam.com" target="_blank">{$taalContent['links']['registration']}</a></li>
+</ul>

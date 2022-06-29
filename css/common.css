@@ -1,0 +1,137 @@
+/*****************************************
+ * MODAL
+ *****************************************/
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+#modal a {
+    background: #000 none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    font-family: 'HelveticaNeueLT-Condensed';
+    font-size: 17px;
+    line-height: 17px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease-out 0s;
+    width: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 20px;
+}
+
+#modal-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10400000000000;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+#modal-bg.crop {
+    background-color: black;
+}
+
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    z-index: 10500000000000;
+    width: 560px;
+    margin: -250px 0 0 -280px;
+    background-color: #ffffff;
+    border: 1px solid #C2C2C2;
+    -webkit-box-shadow: 0 3px 17px #CDCDCD;
+    -moz-box-shadow: 0 3px 17px #CDCDCD;
+    box-shadow: 0 3px 17px #CDCDCD;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+#modal.loader {
+    width: 28px;
+    height: 28px;
+    padding: 20px;
+    text-align: center;
+    margin: -14px 0 0 -14px;
+}
+
+#modal.alert {
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    position: fixed;
+    margin: auto;
+    top: 200px;
+}
+
+#modal.crop {
+    width: 903px;
+    height: 673px;
+    border: 0;
+    background-color: white; margin: -325px 0 0 -453px; padding: 10px;
+}
+
+#modal.crop iframe {
+    width: 893px;
+    height: 673px;
+    border: 0;
+    overflow: hidden;
+}
+
+@media only screen and (max-width:960px) {
+    #modal {
+        top: 20%;
+        left: 50%;
+        margin: 0 !important;
+        width: 200px !important;
+        margin-left: -100px !important;
+    }
+}
+
+#modal #poppup_alert_link {
+    color: #000000;
+    background: none;
+    display: inline;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.image_alert {
+    cursor: pointer;
+}
+
+.center-text {
+    width: 60%;
+    align-content: center;
+    margin: 10% auto auto auto;
+    text-align: center;
+}
+
+.center-text h2 a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.center-text h1 {
+    margin: 0;
+    display: inline-block;
+    font-family: 'source_sans_problack';
+    font-size: 68px;
+    line-height: 69px;
+    color: #000000;
+}

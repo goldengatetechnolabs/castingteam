@@ -1,0 +1,6 @@
+<a href="/cms/inschrijvingen/models/nieuw"{if $tab_active=='nieuw'} class="active"{/if}>Model inschrijvingen</a>
+<a href="/cms/inschrijvingen/models/updates"{if $tab_active=='updates'} class="active"{/if}>Model updates</a>
+{if $admin.typeName!='updater'}<a href="/cms/inschrijvingen/models/inactive"{if $tab_active=='inactive'} class="active"{/if}>Inactive</a>{/if}
+{if $admin.typeName!='updater'}<a href="/cms/inschrijvingen/models/pending"{if $tab_active=='pending'} class="active"{/if}>Pending</a>{/if}
+{if $admin.typeName!='updater'}<a href="/cms/inschrijvingen/models/archief"{if $tab_active=='archief'} class="active"{/if}>Archief</a>{/if}
+<div class="clear"></div>

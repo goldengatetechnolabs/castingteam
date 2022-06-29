@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Borderfield</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="nl" />   
+    <meta name="copyright" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index,follow" />        
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/cms/cms.css" type="text/css" /> 
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/95e5d435-d0b4-4e0f-b140-a24dc196269a.js"></script>   
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="login">
+        <form method="post" action="/cms/">
+            <img src="/images/logo.jpg" alt="" style="margin-left: -25px;" />
+            {if isset($error) && $error<>''}
+            <div class="text-error" style="margin-left: 0px;">{$error}</div>
+            {/if}           
+            <div style="clear:both"></div>
+            <div class="input gn-bg"><label class="links klein">E-mail :</label><input type="text" name="email" /></div>
+            <div class="input gn-bg"><label class="links klein">Wachtwoord :</label><input type="password" name="wachtwoord" /></div>
+            <div style="clear:both"></div>
+            <input type="submit" value="Inloggen" class="button" />
+        </form>
+    </div>
+
+</div>
+   
+</body>
+
+</html>

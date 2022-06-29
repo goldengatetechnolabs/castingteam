@@ -1,0 +1,10 @@
+{foreach from=$videos item=r key=id}
+<div class="model-video">
+	<iframe width="400" height="225" src="{$r.host}{$r.code}" frameborder="0" allowfullscreen></iframe>
+	<!-- <h3 class="cursief">Modelvoorstelling</h3> -->
+	<p>Toegevoegd op {$r.datum}</p>
+	<a class="video_online check {if $r.active==1}actief{/if}" href="javascript:changeModelVideoState({$id}, {if $r.active==1}0{else}1{/if})"></a>
+	<a href="javascript:deleteVideo('{$r.code}',{$model.model_id})" class="button grijs delete">Delete</a>
+	<div style="clear:both"></div>
+</div>
+{/foreach}

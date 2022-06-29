@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl">
+<head>
+    <title>Crop</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <link rel="stylesheet" href="/css/cms/crop.css" type="text/css" />
+    
+    <style>
+    @font-face { font-family: FontinSans; src: url('/css/fonts/Fontin_Sans_R_45b.otf'); }
+    @font-face { font-family: FontinSans; font-style: italic; src: url('/css/fonts/Fontin_Sans_I_45b.otf'); }
+    @font-face { font-family: FontinSans; font-weight: bold; src: url('/css/fonts/Fontin_Sans_B_45b.otf'); }
+    @font-face { font-family: FontinSans; font-weight: bold; font-style: italic; src: url('/css/fonts/Fontin_Sans_BI_45b.otf'); }
+    
+    body {
+    background: white;
+    padding: 10px;
+    font-family: FontinSans;
+    }
+    
+    #container {
+    width: 870px;
+    }
+    
+    #crop-area {
+    background: url('/images/grid.png');
+    border-right: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    height: 493px;
+    width: 770px;
+    padding: 50px;
+    text-align: center;
+    }
+    
+        #crop-area img {
+        max-height:493px;
+        margin-top: 20px; 
+        }
+    
+    a.button {
+    background-color: #007a60;
+    -moz-border-radius: 10px;    
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-family: FontinSans;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 25px;
+    vertical-align: top;
+    }     
+    
+    a.button.grijs {
+    background-color: #c8c8c8;
+    }          
+    </style>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/cms/jcrop.js"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#cropbox').Jcrop({
+            aspectRatio: 1/1.5,
+            onSelect: updateCoords
+        });
+    });    
+    
+    function updateCoords(c) {
+    	$('#x').val(c.x);
+    	$('#y').val(c.y);
+    	$('#w').val(c.w);
+    	$('#h').val(c.h);
+        
+        $('#img_y').val(parseInt($("#crop-area img").css('height')));
+        $('#img_x').val(parseInt($("#crop-area img").css('width')));
+    }
+    
+    function submit() {
+        if($("#x").val() !== '') {
+            $('#form').submit()
+        } else {
+            alert('U heeft niets geselecteerd');
+        }
+    }
+    </script>
+     
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="crop-area">
+            <img src="/models/{$modelId}/original/{$foto}.jpg" id="cropbox" alt="" />
+        </div>    
+        
+        <form method="post" action="/cms/models/models/ajax_model_crop" id="form">
+            <input type="hidden" id="x" name="x" />
+            <input type="hidden" id="y" name="y" />
+            
+            <input type="hidden" id="w" name="w" />
+            <input type="hidden" id="h" name="h" />
+            
+            <input type="hidden" id="img_x" name="img_x" />
+            <input type="hidden" id="img_y" name="img_y" />
+            
+            <input type="hidden" name="code" value="{$code}" />
+            <input type="hidden" name="id" value="{$foto}" />
+            <input type="hidden" name="model_id" value="{$modelId}" />                    
+        </form>
+        
+        <p style="text-align: center;">
+            <a href="javascript:submit()" class="button">Toevoegen</a>
+            <a href="javascript:parent.closeCrop(0)" class="button grijs">Annuleren</a>
+        </p>
+    </div>
+
+</body>
+
+</html>

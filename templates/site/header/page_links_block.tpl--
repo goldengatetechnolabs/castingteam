@@ -1,0 +1,28 @@
+<div class="menu">
+    <div class="menu_inner_right right_column">
+    </div>
+    <div class="menu_inner_left">
+        {include file='site/components/links.tpl'}
+        <div id="social_1" class="socialicon_Sec social_1" >
+            <ul>
+                <li><a href="http://www.facebook.com/mycastingteam" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="http://www.twitter.com/mycastingteam" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/castingteam" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="http://www.instagram.com/castingteam" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="menu_inner_right middle_column">
+        <div id="social_2"  class="socialicon_Sec social_2" >
+            <ul>
+                <li><a href="http://www.facebook.com/mycastingteam" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="http://www.twitter.com/mycastingteam" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/castingteam" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="http://www.instagram.com/castingteam" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+</div>
