@@ -3032,13 +3032,17 @@ class DBController
 		$images = Flight::db()->query("SELECT * FROM model_site_images WHERE id_model=" . $id . $options . " ORDER BY volgorde ASC");
 		if ($images) {
 			while ($image = $images->fetch_array()) {
-
-				if (file_exists("models/" . $id . "/website/thumbs/" . $image['id'] . ".jpg")) {
-
+                if ($image['external']) {
+                    $image['big'] = true;
+                    $image['available'] = true;
+                    $image['src_domain'] = EXTERNAL_IMAGES_SRC;
+                    $results[] = $image;
+                }
+				elseif (file_exists("models/" . $id . "/website/thumbs/" . $image['id'] . ".jpg")) {
+                    $image['src_domain'] = '';
                     if (file_exists("models/" . $id . "/website/middle/" . $image['id'] . ".jpg")) {
                         $image['big'] = true;
                     }
-
                     if (Flight::bg()->checkIsLogged()) {
                         $image['available'] = true;
                     } else {

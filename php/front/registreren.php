@@ -721,6 +721,7 @@ class Registreren extends Core_Controller
         if (isset($_SESSION['model_id']) && is_numeric($_SESSION['model_id'])) {
             $query = Flight::db()->query("
                 SELECT a.id,
+                       a.external,
                        b.code,
                        a.timestamp
                 FROM model_images AS a
@@ -732,14 +733,11 @@ class Registreren extends Core_Controller
                 ORDER BY a.timestamp DESC"
             );
 
-            $today = date("d/m/Y");
             $groupDate = '';
             while ($r = $query->fetch_array()) {
-
                 $photoDate = date("d/m/Y", strtotime($r['timestamp']));
-
+                $src_domain = $r['external'] ? EXTERNAL_IMAGES_SRC : '';
                 if ($groupDate != $photoDate) {
-
                     if ($groupDate != '') {
                         $html_old .= "</ul>";
                     }
@@ -748,7 +746,7 @@ class Registreren extends Core_Controller
 
                 }
 
-                $html_old .= '<li><img class="delete" style="cursor:pointer; position: absolute; width: 32px; height: 32px; margin: 10px; margin-left:150px;" src="/images/remove.png" alt=""/><div style="height:190px; width:190px;  overflow: hidden;"><img class="model_photo" style=" height: auto; width: auto; min-height:190px; min-width:190px; " src="/models/' . $_SESSION['model_id'] . '/thumbs/' . $r['id'] . '.jpg" alt="" /></div></li>';
+                $html_old .= '<li><img class="delete" style="cursor:pointer; position: absolute; width: 32px; height: 32px; margin: 10px; margin-left:150px;" src="/images/remove.png" alt=""/><div style="height:190px; width:190px;  overflow: hidden;"><img class="model_photo" style=" height: auto; width: auto; min-height:190px; min-width:190px; " src="' . $src_domain . '/models/' . $_SESSION['model_id'] . '/thumbs/' . $r['id'] . '.jpg" alt="" /></div></li>';
 
                 $groupDate = $photoDate;
 
@@ -821,8 +819,15 @@ class Registreren extends Core_Controller
                     $json['success'] = 1;
                 } else {
                     Flight::db()->query("DELETE FROM model_images WHERE id=" . $id);
-                    @unlink('models/' . $_SESSION['model_id'] . '/thumbs/' . $id . '.jpg');
-                    @unlink('models/' . $_SESSION['model_id'] . '/original/' . $id . '.jpg');
+                    $image_location = $this->getImageDomainLocation($_SESSION['model_id'], $id);
+                    if ($image_location == '') {
+                        @unlink('models/' . $_SESSION['model_id'] . '/thumbs/' . $id . '.jpg');
+                        @unlink('models/' . $_SESSION['model_id'] . '/original/' . $id . '.jpg');
+                    }
+                    else {
+                        $token = md5( $_SESSION['model_id'].$id.strtotime(date('Y-m-d')));
+                        $result = file_get_contents(EXTERNAL_IMAGES_SRC . '/delete.php?mid=' . $_SESSION['model_id'] . '&file=' . $id . '&token=' . $token);
+                    }
 
                     $json['success'] = 1;
                 }
@@ -830,6 +835,38 @@ class Registreren extends Core_Controller
         }
 
         echo json_encode($json);
+    }
+
+    /**
+     * @param $url
+     * @return bool
+     */
+    public function checkExternalImage($url){
+        $ch = curl_init(EXTERNAL_IMAGES_SRC . '/' . $url);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_exec($ch);
+        $retCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        return $retCode === 200;
+    }
+
+    /**
+     * @param $model_id
+     * @param $image_id
+     * @return string
+     */
+    public function getImageDomainLocation($model_id, $image_id) {
+        $thumb_url = 'models/' . $model_id . '/thumbs/' . $image_id . '.jpg';
+        $thumb_local_exists = file_exists($thumb_url);
+        if (!$thumb_local_exists) {
+            // Check on remote
+            $thumb_external_exist = $this->checkExternalImage($thumb_url);
+            if ($this->checkExternalImage($thumb_url)) {
+                return EXTERNAL_IMAGES_SRC;
+            }
+        }
+        return '';
     }
 
     public function ajax_naar_stap_6()

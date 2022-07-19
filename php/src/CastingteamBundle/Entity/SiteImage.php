@@ -165,4 +165,31 @@ class SiteImage
         $this->siteImageGroups = $siteImageGroups;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getImageLocation() {
+        $thumb_url = "models/" . $this->getModel()->getId() . "/website/thumbs/" . $this->getId() . ".jpg";
+        if (file_exists($thumb_url)) {
+            return '';
+        }
+        else if ($this->checkExternalImage($thumb_url)) {
+            return EXTERNAL_IMAGES_SRC;
+        }
+    }
+
+    /**
+     * @param $url
+     * @return bool
+     */
+    public function checkExternalImage($url){
+        $ch = curl_init(EXTERNAL_IMAGES_SRC . '/' . $url);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_exec($ch);
+        $retCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        return $retCode === 200;
+    }
 }

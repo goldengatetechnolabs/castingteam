@@ -324,7 +324,7 @@ function createModelElements(json, from) {
           if (json.data[key].images[0].id == 'no_foto') {
               image='/models/no_foto.jpg'
           } else {
-              image='/models/'+json.data[key].model_id + '/website/thumbs/' + json.data[key].images[0].id+'.jpg';
+              image=json.data[key].images[0].src_domain + '/models/'+json.data[key].model_id + '/website/thumbs/' + json.data[key].images[0].id+'.jpg';
           }
       } else {
           image='/models/no_foto.jpg';
