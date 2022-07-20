@@ -783,7 +783,7 @@ class Registreren extends Core_Controller
 
                 $soort = 'tmp';
             } elseif (strpos($img, '/models/') !== FALSE) {
-                $id = str_replace('/models/' . $_SESSION['model_id'] . '/thumbs/', '', $img);
+                $id = str_replace(['/models/' . $_SESSION['model_id'] . '/thumbs/', EXTERNAL_IMAGES_SRC], '', $img);
                 $id = str_replace('.jpg', '', $id);
 
                 $explode = explode("?", $id);

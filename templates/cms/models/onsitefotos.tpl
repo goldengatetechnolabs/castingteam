@@ -18,7 +18,7 @@
             <div class="model-photos" id="foto_{$image->getId()}">
                 <a href="javascript:deletePhoto({$image->getId()})" class="button grijs delete">Delete</a>
 
-                <img src="/models/{$id}/website/thumbs/{$image->getId()}.jpg" alt="" />
+                <img src="{$image->getImageLocation()}/models/{$id}/website/thumbs/{$image->getId()}.jpg" alt="" />
 
                 <a id="foto_online_{$image->getId()}" class="photo-checkbox online check{if $image->getOnline() == 1} actief{/if}"></a><br />
                 <a id="foto_pdf_{$image->getId()}" class="photo-checkbox pdf check{if $image->getPdf() == 1} actief{/if} pdf"></a>
@@ -36,7 +36,6 @@
                     <div class="model-photos" id="foto_{$image.id}">
                         <a href="javascript:deletePhoto({$image.id})" class="button grijs delete">Delete</a>
 
-                        <img src="/models/{$id}/website/thumbs/{$image.id}.jpg" alt="" />
 
                         <a id="foto_online_{$image.id}" class="photo-checkbox online check{if $image.siteImageGroups[0].online === true} actief{/if}"></a><br />
                         <a id="foto_pdf_{$image.id}" class="photo-checkbox pdf check{if $image.siteImageGroups[0].pdf === true} actief{/if} pdf"></a>
