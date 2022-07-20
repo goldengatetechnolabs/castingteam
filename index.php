@@ -31,7 +31,7 @@ use Victorybiz\GeoIPLocation\GeoIPLocation;
 
 define('HTTPS', 'https');
 //define('HTTPS', 'http');
-define('EXTERNAL_IMAGES_SRC', 'https://castingteam.com');
+define('EXTERNAL_IMAGES_SRC', 'https://photos.castingteam.com');
 
 // Change session timeout value for a particular page load  - 1 month = ~2678400 seconds
 #ini_set('session.cookie_lifetime', 2592000); 
