@@ -760,7 +760,7 @@
                 </div>
                 <a class="rotate_image" href="javascript:rotateImage({$id},{$model.model_id})" style="position:absolute; width:42px; height:42px; margin:10px; display:none;"><img style="width:42px; height:42px;"  src="/images/button_rotate.png" alt="" /></a>
                 <a href="javascript:showCrop({$id})">
-                    <img data-view0="/models/{$model.model_id}/thumbs/{$id}.jpg" data-view1="/models/{$model.model_id}/original/{$id}.jpg" src="/models/{$model.model_id}/thumbs/{$id}.jpg" alt="" />
+                    <img data-view0="{$val}/models/{$model.model_id}/thumbs/{$id}.jpg" data-view1="{$val}/models/{$model.model_id}/original/{$id}.jpg" src="{$val}/models/{$model.model_id}/thumbs/{$id}.jpg" alt="" />
                 </a>
             </div>
         {/foreach}

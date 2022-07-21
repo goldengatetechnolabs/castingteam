@@ -231,7 +231,7 @@ class Models extends Core_Controller
             ");
 
 			while ($r = $query->fetch_array()) {
-				$fotos[$r['datum']][$r['id']] = 1;
+				$fotos[$r['datum']][$r['id']] = $r['external'] ? EXTERNAL_IMAGES_SRC : '';
 			}
 
 			$emails = [];
@@ -298,6 +298,7 @@ class Models extends Core_Controller
 			$foto_id = $_GET['img'];
 			$query = Flight::db()->query("
             SELECT a.id,
+                    a.external,
                    b.code,
                    a.id_model
 
@@ -310,9 +311,10 @@ class Models extends Core_Controller
 			)->fetch_array();
 
 			$code = $query['code'];
-
+            $src_domain = $query['external'] ? EXTERNAL_IMAGES_SRC : '';
             $this->smarty->assign('code', $code);
             $this->smarty->assign('modelId', $query['id_model']);
+            $this->smarty->assign('src_domain', $src_domain);
             $this->smarty->assign('foto', $foto_id);
             $this->smarty->display('templates/cms/models/crop.html');
 		}
