@@ -9,7 +9,7 @@
 <form method="post" action="/cms/models/models/ajax_aanpassen/" class="ajax" id="formulier">
     <input type="hidden" name="page" value="{$pageType}"/>
     {assign var="frontImage" value=$siteImages[0]}
-    <img src={if isset($frontImage)}"/models/{$model.model_id}/website/thumbs/{$frontImage->getId()}.jpg"{else}"/models/no_foto.jpg"{/if} class="model-details" width="228" height="350"/>
+    <img src={if isset($frontImage)}"{$frontImage->getImageLocation()}/models/{$model.model_id}/website/thumbs/{$frontImage->getId()}.jpg"{else}"/models/no_foto.jpg"{/if} class="model-details" width="228" height="350"/>
     <input type="hidden" name="id" value="{$model.model_id}" />
     <div id="model-details-input">
         <div class="model-details-input-kolom">
