@@ -65,7 +65,8 @@
     $(document).ready(function() {
         $('#cropbox').Jcrop({
             aspectRatio: 1/1.5,
-            onSelect: updateCoords
+            onSelect: updateCoords,
+            bgColor: 'transparent',
         });
     });    
     
@@ -108,6 +109,7 @@
             <input type="hidden" id="img_y" name="img_y" />
             
             <input type="hidden" name="code" value="{$code}" />
+            <input type="hidden" name="src_domain" value="{$src_domain}" />
             <input type="hidden" name="id" value="{$foto}" />
             <input type="hidden" name="model_id" value="{$modelId}" />                    
         </form>

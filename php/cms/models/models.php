@@ -656,7 +656,9 @@ class Models extends Core_Controller
 		if (isset($_POST['id']) && is_numeric($_POST['id'])) {
 			$id = $_POST['id'];
 			$model_id = $_POST['model_id'];
-			$img = "models/" . $model_id . '/original/' . $id . '.jpg';
+            $src_domain = $_POST['src_domain'];
+            $img = $src_domain ? (EXTERNAL_IMAGES_SRC . '/') : '';
+			$img .= "models/" . $model_id . '/original/' . $id . '.jpg';
 			$img_x = $_POST['img_x'];
 			$img_y = $_POST['img_y'];
 
