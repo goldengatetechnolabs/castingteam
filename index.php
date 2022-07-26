@@ -30,9 +30,7 @@ use Doctrine\Common\Cache\FilesystemCache;
 use Victorybiz\GeoIPLocation\GeoIPLocation;
 
 define('HTTPS', 'https');
-//define('HTTPS', 'http');
 define('EXTERNAL_IMAGES_SRC', 'https://photos.castingteam.com');
-
 // Change session timeout value for a particular page load  - 1 month = ~2678400 seconds
 #ini_set('session.cookie_lifetime', 2592000); 
 #ini_set('session.gc_maxlifetime', 2592000);
@@ -46,9 +44,9 @@ session_start();
 
 date_default_timezone_set('Europe/Brussels');
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(1);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
+error_reporting(0);
 
 $loader = require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/vendor/autoload.php';
@@ -69,6 +67,7 @@ if('181.188.132.118' == $_SERVER['REMOTE_ADDR']) {
 /******************************
  * DOCTRINE
  *****************************/
+
 $paths = [ __DIR__ . '/php/src/CastingteamBundle/Entity' ];
 $isDevMode = true;
 $dbParams = [
@@ -92,7 +91,6 @@ $post = is_array($json) ? array_merge($json, $_POST) : $_POST;
 
 $request = new Http_Request($_SESSION, $_REQUEST, $post, $_GET, $_SERVER, $_COOKIE);
 
-
 /******************************
  * SMARTY
  *****************************/
@@ -113,11 +111,11 @@ Flight::smarty()->assign('country_emails', $country_emails);
 Flight::set('request', $request);
 Flight::set('entityManager', $entityManager);
 
-// if ($request->isHttps()) {
-//     Flight::set('protocol', HTTPS);
-// } else {
+if ($request->isHttps()) {
+    Flight::set('protocol', HTTPS);
+} else {
     Flight::set('protocol', 'http');
-// }
+}
 
 Flight::map('notFound', function() {
     if (Flight::bg()->checkLoggedInCms()) {
@@ -155,24 +153,24 @@ Flight::register('bg', 'Background');
  * REDIRECT
  *****************************/
 
-// if (ENVIRONMENT == Enum_Environment::PRODUCTION && !$request->isHttps() && Enum_Site::borderfield() != $siteType) {
-//     header('HTTP/1.1 301 Moved Permanently');
-//     header('Location: '.HTTPS.'://' . $request->getServer()['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-// }
+if (ENVIRONMENT == Enum_Environment::PRODUCTION && !$request->isHttps() && Enum_Site::borderfield() != $siteType) {
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: '.HTTPS.'://' . $request->getServer()['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+}
 
-// if ($request->isHttps() && Enum_Site::borderfield() == $siteType) {
-//     header('HTTP/1.1 301 Moved Permanently');
-//     header('Location: http://' . $request->getServer()['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-// }
+if ($request->isHttps() && Enum_Site::borderfield() == $siteType) {
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: http://' . $request->getServer()['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+}
 
 if (array_key_exists($_SERVER['HTTP_HOST'], DOMAIN_REDIRECT_MAP)) {
 	header('HTTP/1.1 301 Moved Permanently');
 
-	// if (Flight::get('request')->isHttps()) {
-	// 	$protocol = HTTPS;
-	// } else {
+	if (Flight::get('request')->isHttps()) {
+		$protocol = HTTPS;
+	} else {
 		$protocol = 'http';
-	// }
+	}
 
 	header('Location: ' . $protocol . '://' . DOMAIN_REDIRECT_MAP[$_SERVER['HTTP_HOST']] . $_SERVER['REQUEST_URI']);
 }
@@ -241,6 +239,7 @@ if (!empty($array[1]) && !is_null(Enum_Language::create($array[1])->getValue()))
         exit();
     }
 }
+
 
 if(Enum_Site::borderfield() != $siteType)
 {

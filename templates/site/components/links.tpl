@@ -22,7 +22,7 @@
     {else}
         <li class="main-menu__list-item"><a href="/#about">{$taalContent['links']['overcastingteam']}</a></li>
     {/if}
-    <li class="main-menu__list-item"><a href="https://www.instagram.com/castingteam/" target="_blank" class="link">{$taalContent['links']['mycastingteam']}</a></li>
+    <li class="main-menu__list-item"><a href="https://www.instagram.com/castingteam.be/" target="_blank" class="link">{$taalContent['links']['mycastingteam']}</a></li>
     <li class="main-menu__list-item"><a href="https://www.youtube.com/channel/UCKCd9ic0t94AcO1K7z2EjBw" target="_blank" class="link">{$taalContent['links']['clips']}</a></li>
 </ul>
 <ul class="main-menu__list--3 main-menu__list nobullets">

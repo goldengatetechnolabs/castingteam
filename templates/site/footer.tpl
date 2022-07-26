@@ -33,7 +33,7 @@
           <div class="l-element l-grid-33 social-links">
             <ul class="nobullets nomargin social-links__list">
               <li class="social-links__list-item">
-                <a class="no-dec social-links__link" target="_blank" href="https://www.instagram.com/castingteam">
+                <a class="no-dec social-links__link" target="_blank" href="https://www.instagram.com/castingteam.be/">
                   <i class="social-links__icon fas fa-instagram"></i>
                   <p class="social-links__description">{$taalContent.footer.link_instagram}</p>
                 </a>

@@ -32,7 +32,7 @@ class Models extends Core_Controller
 
         $this->smarty->assign('filters', $filters);
         $this->smarty->assign('categories', $categories);
-        $this->smarty->assign('include_tabs', 'cms/models/_tabs2.tpl');
+        $this->smarty->assign('include_tabs', 'cms/models/_tabs.tpl');
         $this->smarty->assign('tab_active', 'filters');
         $this->smarty->assign('include', 'cms/models/filters.tpl');
         $this->smarty->display('templates/cms/index.tpl');
@@ -44,7 +44,7 @@ class Models extends Core_Controller
 		$groups = $this->controller->getAllGroups();
 
         $this->smarty->assign('groepen', $groups);
-        $this->smarty->assign('include_tabs', 'cms/models/_tabs2.tpl');
+        $this->smarty->assign('include_tabs', 'cms/models/_tabs.tpl');
         $this->smarty->assign('tab_active', 'groups');
         $this->smarty->assign('include', 'cms/models/groups.tpl');
         $this->smarty->display('templates/cms/index.tpl');
@@ -124,8 +124,8 @@ class Models extends Core_Controller
         $this->smarty->assign('countries', $this->controller->getCountries());
         $this->smarty->assign('groepen', $groups);
         $this->smarty->assign('emailsFrom', $this->entityFactory->fromEmail()->findAllAsArray());
-        $this->smarty->assign('include_tabs', 'cms/models/_tabs2.tpl');
-		$this->smarty->assign('tab_active', 'models');
+        $this->smarty->assign('include_tabs', 'cms/models/_tabs.tpl');
+				$this->smarty->assign('tab_active', 'models');
         $this->smarty->assign('hoofdmenu_actief', 'models');
         $this->smarty->assign('include', 'cms/models/lijst.tpl');
         $this->smarty->display('templates/cms/index.tpl');
@@ -133,38 +133,6 @@ class Models extends Core_Controller
 
 	public function aanpassen()
     {
-		// var_dump("hi");
-
-
-		// $remote_file = '230364.jpg';
-
-		
-		// /* FTP Account (Remote Server) */
-		// $ftp_host = 'ftp.stagecastingteamcom.webhosting.be'; /* host */
-		// $ftp_user_name = 'stagecastingteamcom@stagecastingteamcom'; /* username */
-		// $ftp_user_pass = '1rf8?rsZx457'; /* password */
-		
-		
-		// /* File and path to send to remote FTP server */
-		// $local_file = $_SERVER['DOCUMENT_ROOT'] . '/models/113774/thumbs/230364.jpg';
-		
-		// /* Connect using basic FTP */
-		// $connect_it = ftp_connect( $ftp_host );
-		
-		
-		// /* Login to FTP */
-		// $login_result = ftp_login( $connect_it, $ftp_user_name, $ftp_user_pass );
-
-		// ftp_chdir($connect_it, '/www');
-		// var_dump(ftp_chdir($connect_it, 'gdfdf'));
-		// // ftp_mkdir($connect_it, "model");
-
-		// var_dump( ftp_put( $connect_it, $remote_file, $local_file, FTP_BINARY ) );
-		// // var_dump(error_get_last());
-		
-		// ftp_close( $connect_it );
-
-		// exit;
 		if (
 		    isset($_GET['id']) &&
             is_numeric($_GET['id'])
@@ -298,7 +266,7 @@ class Models extends Core_Controller
 			$foto_id = $_GET['img'];
 			$query = Flight::db()->query("
             SELECT a.id,
-                    a.external,
+                   a.external,
                    b.code,
                    a.id_model
 
@@ -878,59 +846,6 @@ class Models extends Core_Controller
         $this->smarty->assign('emailsFrom', $this->entityFactory->fromEmail()->findAllAsArray());
         $this->smarty->assign('include', 'cms/models/lijst.tpl');
         $this->smarty->display('templates/cms/index.tpl');
-	}
-
-	public function booker_list()
-    {
-		$clients = [];
-        $client_query = Flight::db()->query("SELECT `id`, `company_name` FROM `clients` WHERE is_archive = 0 ORDER BY `company_name` ASC ");
-        while ($row = $client_query->fetch_assoc()) {
-            array_push($clients, $row);
-        }
-        $this->smarty->assign('include_tabs', 'cms/models/_tabs.tpl');
-		$this->smarty->assign('hoofdmenu_actief', 'selections');
-        $this->smarty->assign('tab_active', 'booker_list');
-		$this->smarty->assign('clients', $clients);
-        $this->smarty->assign('include', 'cms/models/booker_list.tpl');
-        $this->smarty->display('templates/cms/index-new.tpl');
-    }
-
-	public function client_list()
-    {	
-        $this->smarty->assign('include_tabs', 'cms/models/_tabs.tpl');
-        $this->smarty->assign('tab_active', 'client_list');
-        $this->smarty->assign('include', 'cms/models/client_list.tpl');
-        $this->smarty->display('templates/cms/index-new.tpl');
-    }
-
-	public function selection_ajax()
-	{	
-		$selection_ids = [];
-		$selections = [];
-        $selection_id_query = Flight::db()->query("SELECT `selection_id` FROM `project_selections` WHERE `client_id` = " . Flight::db()->real_escape_string($_GET['client_id']) . " AND `project_id` = " . Flight::db()->real_escape_string($_GET['project_id']) );
-        while ($row = $selection_id_query->fetch_assoc()) {
-            array_push($selection_ids, $row["selection_id"]);
-        }
-        $selection_query = Flight::db()->query("SELECT `id`, `name` FROM `selecties` WHERE id IN ( " . implode(",", $selection_ids) . " )");
-        while ($row = $selection_query->fetch_assoc()) {
-            array_push($selections, $row);
-        }
-        echo json_encode($selections);
-	}
-
-	public function selection_by_project_ajax()
-	{
-		$selection_ids = [];
-		$selections = [];
-        $selection_id_query = Flight::db()->query("SELECT `selection_id` FROM `project_selections` WHERE `client_id` = " . Flight::db()->real_escape_string($_GET['client_id']) . " AND `project_id` = " . Flight::db()->real_escape_string($_GET['project_id']) );
-        while ($row = $selection_id_query->fetch_assoc()) {
-            array_push($selection_ids, $row["selection_id"]);
-        }
-		$selection_query = Flight::db()->query("SELECT selecties.code, selecties.creation_date, selecties.id, selecties.name, (select COUNT(id_model) from selecties_models where selecties_models.id_selectie = selecties.id ) as modal_count FROM `selecties` WHERE id in (" . implode(",", $selection_ids) . ")");
-        while ($row = $selection_query->fetch_assoc()) {
-            array_push($selections, $row);
-        }
-        echo json_encode($selections);
 	}
 }
 

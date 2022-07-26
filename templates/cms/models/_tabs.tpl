@@ -1,4 +1,5 @@
-<a href="/cms/models/models/booker_list"{if $tab_active=='booker_list'} class="active" {/if}>Booker selections</a>
-<a href="/cms/models/models/client_list"{if $tab_active=='client_list'} class="active" {/if}>Client selections</a>
-<a href="/cms/models/models/selecties"{if $tab_active=='selections'} class="active"{/if}>All selecties</a>
+<a href="/cms/models/models/lijst"{if $tab_active=='models'} class="active"{/if}>Modellen</a>
+<a href="/cms/models/models/selecties"{if $tab_active=='selections'} class="active"{/if}>Selecties</a>
+<a href="/cms/models/models/groups"{if $tab_active=='groups'} class="active"{/if}>Groepen</a>
+<a href="/cms/models/models/filters"{if $tab_active=='filters'} class="active"{/if}>Filters</a>
 <div class="clear"></div>

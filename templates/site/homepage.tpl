@@ -27,8 +27,10 @@
 
         <section class="social-media">
             <div class="social-media__header">
-              <img class="social-media__insta-logo logo social-media__insta-logo" src="/images/site/new-design/ig_glyph.png" alt="">
-              <span class="social-media__title">#castingteam</span>
+            <a href="https://www.instagram.com/castingteam.be/">
+               <img class="social-media__insta-logo logo social-media__insta-logo" src="/images/site/new-design/ig_glyph.png" alt="https://www.instagram.com/castingteam.be/">
+            </a>
+              <span class="social-media__title">@castingteam.be </span>
               <h1 style="display: none;">{$taalContent.homepage.h1}</h1>
             </div>
             <div class="social-media__instagram instagram">
@@ -39,7 +41,7 @@
             </div>
             <div class="social-media__links">
               <a target="_blank" href="https://www.youtube.com/channel/UCKCd9ic0t94AcO1K7z2EjBw" class="social-media__discover button"><i class="fas fa-youtube"></i>YouTube</a>
-              <a target="_blank" href="https://www.instagram.com/castingteam" class="social-media__discover button">{$taalContent.homepage.button_instagram}</a>
+              <a target="_blank" href="https://www.instagram.com/castingteam.be/" class="social-media__discover button">{$taalContent.homepage.button_instagram}</a>
             </div>
         </section>
 

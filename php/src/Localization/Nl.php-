@@ -162,7 +162,7 @@ class Localization_Nl extends Localization_Language
                 'bust' => 'Borstomtrek',
                 'sizes' => 'Maten',
                 'cloth_sizes' => 'Kledingmaten',
-                'refine' => 'VERFIJN SELECTIE',
+                'refine' => 'Verfijn selectie',
                 'man' => 'Mannen',
                 'woman' => 'Vrouwen',
                 'girl' => 'Meisjes',
@@ -500,7 +500,7 @@ class Localization_Nl extends Localization_Language
             ],
         'search' =>
             [
-                'placeholder' => 'Naam of refn°'
+                'placeholder' => 'Zoek (Naam of refn°)'
             ],
         'smart_search' =>
             [
@@ -519,11 +519,11 @@ class Localization_Nl extends Localization_Language
             ],
         'model' =>
             [
-                'title' => 'VOEG DIT MODEL TOE AAN JE SELECTIE',
-                'subtitle_1' => 'MATEN',
-                'subtitle_2' => 'BESCHRIJVING',
-                'subtitle_3' => 'ERVARING',
-                'subtitle_4' => 'VIDEO\'S',
+                'title' => 'Voeg dit model toe aan je selectie',
+                'subtitle_1' => 'Maten',
+                'subtitle_2' => 'Beschrijving',
+                'subtitle_3' => 'Ervaring',
+                'subtitle_4' => 'Video\'s',
                 'pdf_button' => 'Setcard (PDF)',
                 'selection_button' => 'Voeg toe aan selectie',
                 'vip' => 'Word VIP',
@@ -531,13 +531,13 @@ class Localization_Nl extends Localization_Language
             ],
         'selection' =>
             [
-                'title' => 'JE SELECTIE',
+                'title' => 'Je selectie',
                 'title_two' => 'Je hebt nog geen selecties bewaard',
                 'edit_button' => 'Pas deze selectie aan',
-                'send_button' => 'Verzend je selectie',
+                'send_button' => 'Send selection',
                 'view' => ' Kies je view :',
-                'view_1' => 'Onder elkaar',
-                'view_2' => 'Lijst overzicht',
+                'view_1' => 'Toon selectie onder elkaar',
+                'view_2' => 'Toon headshots',
                 'subtitle' => 'Je selectie is momenteel nog leeg...'
             ],
         'registration' =>
@@ -899,8 +899,16 @@ class Localization_Nl extends Localization_Language
                             4. De gegevens die het model ons bezorgt worden door Castingteam (BORDERFIELD BVBA) bewaard, uitsluitend met het oog op het uitvoeren van de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA). In het kader daarvan kunnen al deze gegevens worden doorgegeven aan derden, waaronder de klanten van Castingteam (BORDERFIELD BVBA) zoals reclamebureaus, fotografen en modehuizen.
                             <br><br>
                             Bij de bewaarde gegevens horen de naam, geboortedatum, geslacht, adres, contactgegevens, moedertaal en diverse uiterlijke kenmerken, waaronder doch niet uitsluitend de huidskleur. Het model geeft voor de verwerking van al deze gegevens uitdrukkelijk toestemming. Het model heeft het recht om ons kosteloos te vragen over welke persoonsgegevens wij beschikken en deze gegevens desgevallend kosteloos te laten corrigeren of te verwijderen, door ons te contacteren via de op deze website opgenomen contactgegevens.
+							<br><br>
+							5. Alle financiële afspraken tussen klanten en modellen of talents ingeschreven in de database van Castingteam (Borderfield BVBA), dienen in samenspraak met Castingteam (Borderfield BVBA) te gebeuren, vanaf dat Castingteam (Borderfield BVBA) hiervoor benaderd wordt.
+							<br><br>
+							Zodoende, wanneer een klant contact opneemt met Castingteam (Borderfield BVBA) via email, telefoon of andere weg, dienen alle financiële afspraken die betrekking hebben op de aanvraag die neergelegd werd bij Castingteam (Borderfield BVBA) via Castingteam (Borderfield BVBA) te gebeuren.
+							<br><br>
+							Indien de opdracht is volbracht en zelfs gefactureerd, maar er nog bijkomende of nieuwe opnames dienen te gebeuren in functie van dezelfde opdracht (zelfde campagne, zelfde merk..) dienen er nieuwe financiële afspraken gemaakt te worden met Castingteam (Borderfield BVBA). Het is klanten of modellen / talents niet toegestaan om rechtstreeks met elkaar afspraken te maken, zonder medezeggenschap of tussenkomst van Castingteam (Borderfield BVBA). 
+							<br><br>
+							Klanten en modellen / talents kunnen in sommige gevallen rechtstreeks met elkaar communiceren, en klanten kunnen zelfs modellen / talents rechtstreeks vergoeden, maar alleen als deze afspraken in samenspraak en akkoord van Castingteam (Borderfield BVBA) zijn gemaakt, en Castingteam (Borderfield BVBA) vergoed wordt middels een casting-, agency- of boekingsfee.
                             <br><br>
-                            5. Op de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA) is het Belgisch recht van toepassing en in geval van betwisting zijn enkel de rechtbanken te Turnhout bevoegd.'
+                            6. Op de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA) is het Belgisch recht van toepassing en in geval van betwisting zijn enkel de rechtbanken te Turnhout bevoegd.'
                     ],
                 'sidebar' =>
                     [

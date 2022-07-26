@@ -40,7 +40,7 @@ class Localization_Nl extends Localization_Language
                 'home' => 'Home',
                 'homepage' => 'Homepage',
                 'overcastingteam' => 'Over Castingteam',
-                'mycastingteam'  => '#mycastingteam',
+                'mycastingteam'  => '@castingteam.be',
                 'logout' => 'Uitloggen',
                 'new_talents' => 'Nieuw talent',
                 'people_models' => 'Onze mensen',
@@ -371,10 +371,11 @@ class Localization_Nl extends Localization_Language
                 'title' => 'Contact',
                 'text_block' =>
                     [
-                        'p_1' => 'Castingteam België',
-                        'p_2' => 'Castingteam Nederland',
-                        'p_3' => 'Inschrijven',
-                        'p_4' => 'We zijn voortdurend op zoek naar fotogenieke people, modellen, acteurs en actrices, kids & teens, senioren... inschrijven kan via',
+                        'p_1' => 'Castingteam Vlaanderen',
+                        'p_2' => 'Castingteam Brussel',
+                        'p_3' => 'Castingteam Nederland',
+                        'p_4' => 'Inschrijven',
+                        'p_5' => 'We zijn voortdurend op zoek naar fotogenieke people, modellen, acteurs en actrices, kids & teens, senioren... inschrijven kan via <span class="strong"><a href="/nl/register/0" class="black-underlined" target="_blank">inschrijven.castingteam.com</a></span>.',
                     ]
             ],
         'conditions' =>
@@ -382,7 +383,7 @@ class Localization_Nl extends Localization_Language
                 'text_block_1' =>
                     [
                         'title' => 'Cookie policy',
-                        'p' => ' 
+                        'p' => '
                       Castingteam (BORDERFIELD BVBA) maakt gebruik van cookies.<br><br>
                       Cookies zijn kleine bestanden die je voorkeuren tijdens het surfen onthouden en opslaan op je eigen computer. Een cookie slaat je naam of andere gegevens niet op, ze onthouden alleen je voorkeuren en je interesses op basis van je surfgedrag.<br><br>
                       Cookies kunnen NOOIT gebruikt worden om privegegevens van je computer uit te lezen of wachtwoorden te onderscheppen. Ook kunnen ze je computer niet infecteren met een virus of trojan. ze zijn dus volkomen veilig en worden al sinds de jaren 90 zonder incident gebruikt op bijna ALLE websites in de wereld. <br><br>
@@ -397,7 +398,7 @@ class Localization_Nl extends Localization_Language
                 'text_block_2' =>
                     [
                         'title' => 'Disclaimer',
-                        'p' => ' 
+                        'p' => '
                       De voorwaarden van deze disclaimer zijn van toepassing op de websites www.castingteam.com / www.castingteam.be / www.castingteam.nl en www.borderfield.com. Door deze website te bezoeken en / of de op of via deze website aangeboden informatie te gebruiken, verklaart u zich akkoord met de toepasselijkheid van deze disclaimer.<br><br>
                       <span class="strong">Gebruik van de website</span><br>
                       De informatie op deze website is uitsluitend bedoeld als algemene informatie. Er kunnen geen rechten aan de informatie op deze website worden ontleend. Hoewel Castingteam (BORDERFIELD BVBA) zorgvuldigheid in acht neemt bij het samenstellen en onderhouden van deze website en daarbij gebruik maakt van bronnen die betrouwbaar geacht worden, kan Castingteam (BORDERFIELD BVBA) niet instaan voor de juistheid, volledigheid en actualiteit van de geboden informatie. Castingteam (BORDERFIELD BVBA) garandeert evenmin dat de website foutloos of ononderbroken zal functioneren. Castingteam (BORDERFIELD BVBA) wijst iedere aansprakelijkheid ten aanzien van de juistheid, volledigheid, actualiteit van de geboden informatie en het (ongestoord) gebruik van deze website uitdrukkelijk van de hand.<br><br>
@@ -899,8 +900,16 @@ class Localization_Nl extends Localization_Language
                             4. De gegevens die het model ons bezorgt worden door Castingteam (BORDERFIELD BVBA) bewaard, uitsluitend met het oog op het uitvoeren van de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA). In het kader daarvan kunnen al deze gegevens worden doorgegeven aan derden, waaronder de klanten van Castingteam (BORDERFIELD BVBA) zoals reclamebureaus, fotografen en modehuizen.
                             <br><br>
                             Bij de bewaarde gegevens horen de naam, geboortedatum, geslacht, adres, contactgegevens, moedertaal en diverse uiterlijke kenmerken, waaronder doch niet uitsluitend de huidskleur. Het model geeft voor de verwerking van al deze gegevens uitdrukkelijk toestemming. Het model heeft het recht om ons kosteloos te vragen over welke persoonsgegevens wij beschikken en deze gegevens desgevallend kosteloos te laten corrigeren of te verwijderen, door ons te contacteren via de op deze website opgenomen contactgegevens.
+							<br><br>
+							5. Alle financiële afspraken tussen klanten en modellen of talents ingeschreven in de database van Castingteam (Borderfield BVBA), dienen in samenspraak met Castingteam (Borderfield BVBA) te gebeuren, vanaf dat Castingteam (Borderfield BVBA) hiervoor benaderd wordt.
+							<br><br>
+							Zodoende, wanneer een klant contact opneemt met Castingteam (Borderfield BVBA) via email, telefoon of andere weg, dienen alle financiële afspraken die betrekking hebben op de aanvraag die neergelegd werd bij Castingteam (Borderfield BVBA) via Castingteam (Borderfield BVBA) te gebeuren.
+							<br><br>
+							Indien de opdracht is volbracht en zelfs gefactureerd, maar er nog bijkomende of nieuwe opnames dienen te gebeuren in functie van dezelfde opdracht (zelfde campagne, zelfde merk..) dienen er nieuwe financiële afspraken gemaakt te worden met Castingteam (Borderfield BVBA). Het is klanten of modellen / talents niet toegestaan om rechtstreeks met elkaar afspraken te maken, zonder medezeggenschap of tussenkomst van Castingteam (Borderfield BVBA).
+							<br><br>
+							Klanten en modellen / talents kunnen in sommige gevallen rechtstreeks met elkaar communiceren, en klanten kunnen zelfs modellen / talents rechtstreeks vergoeden, maar alleen als deze afspraken in samenspraak en akkoord van Castingteam (Borderfield BVBA) zijn gemaakt, en Castingteam (Borderfield BVBA) vergoed wordt middels een casting-, agency- of boekingsfee.
                             <br><br>
-                            5. Op de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA) is het Belgisch recht van toepassing en in geval van betwisting zijn enkel de rechtbanken te Turnhout bevoegd.'
+                            6. Op de overeenkomst tussen het model en Castingteam (BORDERFIELD BVBA) is het Belgisch recht van toepassing en in geval van betwisting zijn enkel de rechtbanken te Turnhout bevoegd.'
                     ],
                 'sidebar' =>
                     [

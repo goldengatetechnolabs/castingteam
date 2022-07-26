@@ -40,7 +40,7 @@ class Localization_De extends Localization_Language
                 'home' => 'Startseite',
                 'homepage' => 'Startseite',
                 'overcastingteam' => 'Über Castingteam',
-                'mycastingteam'  => '#mycastingteam',
+                'mycastingteam'  => '@castingteam.be',
                 'logout' => 'Ausloggen',
                 'new_talents' => 'Neues Talent',
                 'people_models' => 'Unsere Leute',

@@ -370,23 +370,12 @@ $(document).ready(function() {
             data: data,
             url: form.attr('action'),
             error:
-                    function(err) {
-                        console.log(err);
+                    function() {
                         alert('Er is een technische fout opgetreden. Contacteer <strong>Websiting!</strong> indien deze fout zich blijft voordoen.');
                         $("input[type='submit']").removeAttr('disabled');
                     },
             success:
                     function(json) {
-                        if(json.new_selection != undefined) {
-                            var single_selection = $("#single_selection")
-                            var selection_title = $("input[name='selection_title']");
-                            single_selection.val(json.new_selection.name)
-                            single_selection.parent().parent().addClass("is-value");
-                            $("#single_selection_id").val(json.new_selection.id);
-                            $("#single_selection_options").prepend(`<div data-single-selection="${json.new_selection.id}" class="cms-select-optional">${json.new_selection.name}</div>`);
-                            selection_title.val("");
-                            selection_title.parent().parent().removeClass("is-value");
-                        }
                         if (json['bericht'] != 'none') {
                             if (json['bericht']) {
                                 if (json['redirect']) {

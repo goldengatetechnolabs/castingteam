@@ -40,7 +40,7 @@ class Localization_Fr extends Localization_Language
                 'home' => 'Accueil',
                 'homepage' => 'Accueil',
                 'overcastingteam' => 'À propos de Castingteam',
-                'mycastingteam'  => '#mycastingteam',
+                'mycastingteam'  => '@castingteam.be',
                 'logout' => 'Déconnexion',
                 'new_talents' => 'Têtes fraîches',
                 'people_models' => 'Nos talents',
@@ -370,10 +370,11 @@ class Localization_Fr extends Localization_Language
                 'title' => 'Contact',
                 'text_block' =>
                     [
-                        'p_1' => 'Castingteam Belgique',
-                        'p_2' => 'Castingteam Pays-Bas',
-                        'p_3' => 'S’inscrire',
-                        'p_4' => 'Nous sommes constamment à la recherche de personnes photogéniques, de modèles, d’acteurs et d’actrices, d’enfants et d’ados, de seniors... Vous pouvez vous inscrire via',
+                        'p_1' => 'Castingteam Bruxelles',
+                        'p_2' => 'Castingteam Flandre',
+                        'p_3' => 'Castingteam Pays-Bas',
+                        'p_4' => 'S’inscrire',
+                        'p_5' => 'Nous sommes constamment à la recherche de personnes photogéniques, de modèles, d’acteurs et d’actrices, d’enfants et d’ados, de seniors... Vous pouvez vous inscrire via <span class="strong"><a href="/fr/register/0" class="black-underlined" target="_blank">inschrijven.castingteam.com</a></span>.',
                     ]
             ],
         'conditions' =>

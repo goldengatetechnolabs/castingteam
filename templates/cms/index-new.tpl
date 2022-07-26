@@ -6,19 +6,20 @@
     <meta http-equiv="content-language" content="nl" />
     <meta name="copyright" content="" />
     <meta name="keywords" content="" />
-    <link rel="stylesheet" href="/css/icheck/green.css" type="text/css" />
+
+    <!-- <link rel="stylesheet" href="/css/icheck/green.css" type="text/css" />
     <link rel="stylesheet" href="/css/fonts.css" type="text/css" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/cms/style.css" type="text/css" />
-    <link rel="stylesheet" href="/css/cms/cms.css" type="text/css" /> 
-    <link rel="stylesheet" href="/css/cms/select2.min.css" type="text/css" /> 
+    <link rel="stylesheet" href="/css/cms/cms.css" type="text/css" /> -->
+
     <link rel="stylesheet" href="/css/cms/cms-new.css" type="text/css" />
     
     <link rel="stylesheet" href="/css/cms/jqueryui.css" type="text/css" />
-    <link rel="stylesheet" href="/css/cms/cms-new-nav.css" type="text/css" />
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="/css/site/featherlight.min.css" title="Featherlight Styles" />
+
     <script src="https://maps.google.com/maps/api/js" type="text/javascript"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="/js/cms/jqueryui.js"></script>
@@ -27,35 +28,14 @@
     <script type="text/javascript" src="https://fast.fonts.net/jsapi/95e5d435-d0b4-4e0f-b140-a24dc196269a.js"></script>
     <script type="text/javascript" src="/js/cms/main.js"></script>
     <script type="text/javascript" src="/js/cms/ajax.js"></script>
-    <script type="text/javascript" src="/js/cms/select2.min.js"></script>
+
     <script type="text/javascript" src="/js/cms/cms-new.js"></script>
-    <script type="text/javascript">
-
-      function initSelect2(element = ".select2", elementParent = ".cms-select") {
-        $(element).select2({
-          dropdownParent: $(elementParent),
-        });
-      }
-    </script>
+    
     <script>var taal = '{$taal}'; </script>
-
-    <script type="text/javascript">
-      $(document).click(function (e) {
-          if ($(e.target).is('.modal')) {
-              $('.modal').hide();
-          }
-
-          // $("body").on("click", ".cms-select-arrow", function(e) {
-          //   //$(this).parent().find("select").select2("open");
-          //   $(this).parent().find("select").select2("isOpen") ? $(this).parent().find("select").select2("close") : $(this).parent().find("select").select2("open");
-          //   console.log($(this).parent().find("select").select2("isOpen"));
-          // });
-      });
-    </script>
-
   </head>
   <body>
-    <div id="popup-bg"></div>
+
+    <!--<div id="popup-bg"></div>-->
     
     <div class="cms-header">
       <div class="cms-header-logos">
@@ -69,6 +49,7 @@
         *}
       </div>
     </div>
+
     <section class="cms-section cms-section-container">
     
       <div class="cms-sidebar">
@@ -96,7 +77,7 @@
             </li>
             {*/if*}
             <li{if $hoofdmenu_actief=='selections'} class="is-active"{/if}>
-              <a href="/cms/models/models/booker_list">
+              <a href="/cms/models/models/selecties">
                 <i class="fas fa-user-check"></i> Selections
               </a>
             </li>
@@ -108,13 +89,8 @@
           </ul>
           <ul>
             <li{if $hoofdmenu_actief=='clients'} class="is-active"{/if}>
-              <a href="/cms/clients/clients/client_list">
+              <a href="/cms/clients/clients/create_client">
                 <i class="fas fa-list"></i> Clients
-              </a>
-            </li>
-            <li{if $hoofdmenu_actief=='projects'} class="is-active"{/if}>
-              <a href="/cms/projects/projects/project_list">
-                <i class="fas fa-list"></i> Projects
               </a>
             </li>
             {*if $admin.typeName!='updater'*}
@@ -196,13 +172,16 @@
           {include "$include"}
         </div>
       </div>
+
     </section>
+
     <div class="cms-popup-bg" id="models-preview">
       <div class="cms-popup models-preview">
         <a href="#" class="close"><span class="icon-cross icon"></span></a>
         <div id="preview-images"></div>
       </div>
     </div>
+
     <div class="cms-popup-bg" id="models-message">
       <div class="cms-popup models-message">
         <a href="#" class="close"><span class="icon-cross icon"></span></a>
@@ -210,6 +189,7 @@
         <form method="post" action="/api/email/send" class="ajax">
           <input type="hidden" name="model_id" value="" />
           <input type="hidden" name="user_type" id="user_type" value="{if $tab_active eq 'overview' ||  $tab_active eq 'new_registrations'}1{else}2{/if}" />
+
           <div class="line_block mail-id-block">
             <select name="mail_id" class="custom-select-new">
               {foreach from=$emails item=r key=id}
@@ -217,6 +197,7 @@
               {/foreach}
             </select>
           </div>
+
           <div class="line_block">
             <div class="select-wrapper">
               <select name="mail_from" class="custom-select-new mail_from">
@@ -226,6 +207,7 @@
               </select>
             </div>
           </div>
+
           <p class="custom-message-area-wrapper">
             <textarea class="custom-message-area" rows="5" cols="45" name="text"></textarea>
           </p>
@@ -241,6 +223,7 @@
         </div>
       </div>
     </div>
+
     <div class="cms-popup-bg" id="models-message-group">
       <div class="cms-popup models-message">
         <a href="#" class="close"><span class="icon-cross icon"></span></a>
@@ -254,6 +237,7 @@
               {/foreach}
             </select>
           </div>
+
           <div class="line_block">
             <div class="select-wrapper">
               <select name="mail_from" class="custom-select-new mail_from">
@@ -264,6 +248,7 @@
             </div>
             <a id="add-from-email" onclick="showAddFromEmailForm()" class="button">Add email address</a>
           </div>
+
           <p class="custom-message-area-wrapper">
             <textarea class="custom-message-area" rows="5" cols="45" name="text"></textarea>
           </p>
@@ -282,6 +267,7 @@
         </form>
       </div>
     </div>
+
     <div class="loading">
       <div id="infscr-loading">
         <img src="/images/loading.gif" alt="Loading..." width='50' height="50" >
@@ -290,5 +276,6 @@
         <span>No more pages to load.</span>
       </div>
     </div>
+
   </body>
 </html>

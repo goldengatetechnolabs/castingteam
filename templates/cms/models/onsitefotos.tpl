@@ -36,6 +36,7 @@
                     <div class="model-photos" id="foto_{$image.id}">
                         <a href="javascript:deletePhoto({$image.id})" class="button grijs delete">Delete</a>
 
+                        <img src="/models/{$id}/website/thumbs/{$image.id}.jpg" alt="" />
 
                         <a id="foto_online_{$image.id}" class="photo-checkbox online check{if $image.siteImageGroups[0].online === true} actief{/if}"></a><br />
                         <a id="foto_pdf_{$image.id}" class="photo-checkbox pdf check{if $image.siteImageGroups[0].pdf === true} actief{/if} pdf"></a>

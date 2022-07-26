@@ -2,7 +2,7 @@
     {include file='site/components/links.tpl'}
 </nav>
 <div class="main-menu__social social-links">
-    <a target="_blank" href="https://www.instagram.com/castingteam" class="no-dec">
+    <a target="_blank" href="https://www.instagram.com/castingteam.be/" class="no-dec">
     	<img src="/images/site/new-design/icon_insta.png">
     	<img class="mob" src="/images/site/new-design/icon_insta-m.png">
     </a>

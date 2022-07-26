@@ -1,10 +1,13 @@
 $(document).ready(function() {
+
     check_input_fields();
+
     $("body")
         .on("focus", "[data-input] input", function() {
             let _this = $(this),
                 _form_input = _this.parents('[data-input]');
             _form_input.addClass('is-focus');
+
             if (_form_input.parents('.cms-input-phone').length > 0)
                 _form_input.parents('.cms-input-phone').removeClass('is-disabled');
         })
@@ -19,8 +22,8 @@ $(document).ready(function() {
             }
             else {
                 _form_input.removeClass('is-value');
-                if (_form_input.parents('.cms-input-phone').length > 0) {}
-                    // _form_input.parents('.cms-input-phone').addClass('is-disabled');
+                if (_form_input.parents('.cms-input-phone').length > 0)
+                    _form_input.parents('.cms-input-phone').addClass('is-disabled');
             }
         })
         .on("focus", "[data-textarea] textarea", function() {
@@ -45,6 +48,7 @@ $(document).ready(function() {
             else {
                 if(_form_select.hasClass('is-open')) _form_select.removeClass('is-open');
                 else _form_select.addClass('is-open');
+
                 if(_form_select.find('[data-select-value]').val() != '') _form_select.addClass('is-value');
                 else _form_select.removeClass('is-value');
             }
@@ -53,10 +57,12 @@ $(document).ready(function() {
             let _this = $(this),
                 _this_value = _this.text(),
                 _form_select = _this.parents('[data-select]');
+
             _form_select.find('[data-select-value]').val(_this_value);
-            _form_select.find('[data-select-value]').trigger("change");
+
             if(_form_select.hasClass('is-open')) _form_select.removeClass('is-open');
             else _form_select.addClass('is-open');
+
             if(_form_select.find('[data-select-value]').val() != '') _form_select.addClass('is-value');
             else _form_select.removeClass('is-value');
         })
@@ -65,18 +71,10 @@ $(document).ready(function() {
             if (!_form_select.is(e.target) && _form_select.has(e.target).length === 0) {
                 _form_select.removeClass('is-open');
             }
-            var _modal_content = $(".modal-content");
-            if (!_modal_content.is(e.target) && _modal_content.has(e.target).length === 0) {
-                _modal_content.parents('.cms-modal').removeClass('is-open');
-            }
             var _modal = $(".cms-modal-container");
             if (!_modal.is(e.target) && _modal.has(e.target).length === 0) {
                 _modal.parents('.cms-modal').removeClass('is-open');
             }
-            var _modal_close = $(".close");
-            
-                _modal_close.parents('.cms-modal').removeClass('is-open');
-            
         })
         .on("click", "[data-modal]", function() {
             let _this = $(this),
@@ -92,6 +90,7 @@ $(document).ready(function() {
             _this.parents('.cms-grid-row').removeClass('is-open');
         });
 });
+
 function check_input_fields() {
     let _inputs = $('[data-input]');
     let _textarea = $('[data-textarea]');
@@ -104,8 +103,8 @@ function check_input_fields() {
         }
         else {
             $(element).removeClass('is-value');
-            if ($(element).parents('.cms-input-phone').length > 0) {}
-                // $(element).parents('.cms-input-phone').addClass('is-disabled');
+            if ($(element).parents('.cms-input-phone').length > 0)
+                $(element).parents('.cms-input-phone').addClass('is-disabled');
         }
     });
     _textarea.each(function(index, element) {
