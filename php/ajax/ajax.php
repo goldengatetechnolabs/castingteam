@@ -820,7 +820,7 @@ class Ajax
             ");
 
             while ($r = $query->fetch_array()) {
-                $fotos[$r['datum']][$r['id']] = 1;
+                $fotos[$r['datum']][$r['id']] = $r['external'] ? EXTERNAL_IMAGES_SRC : '';;
             }
 
             $emails = [];

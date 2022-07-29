@@ -274,12 +274,12 @@
                         for (image in json.data[key].images) {
                             var copyright = $('.copyright').length ? 'title="copyright"' : '';
                             var magnifingGlass = json.data[key].images[image].big ? '<span class="zoom_pop"><i class="fa fa-search"></i></span>' : '';
-                            var link = json.data[key].images[image].big ? 'class="fancybox_image" href="' + json.data[key].images[0].src_domain + '/models/' + json.data[key].model_id + '/website/middle/' + json.data[key].images[image].id + '.jpg" ' + copyright + ' rel="model_group_' + key + '"' : '';
+                            var link = json.data[key].images[image].big ? 'class="fancybox_image" href="' + json.data[key].images[image].src_domain + '/models/' + json.data[key].model_id + '/website/middle/' + json.data[key].images[image].id + '.jpg" ' + copyright + ' rel="model_group_' + key + '"' : '';
 
                             model_element += '<div class="model-carousel"><a ' + link + ' >'
                                     + magnifingGlass + '<img width="228" height="350" alt="'
                                     + json.data[key].voornaam + ' (' + json.data[key].model_id + ')'
-                                    + '" src="' + json.data[key].images[0].src_domain + '/models/' + json.data[key].model_id + '/website/thumbs/'
+                                    + '" src="' + json.data[key].images[image].src_domain + '/models/' + json.data[key].model_id + '/website/thumbs/'
                                     + json.data[key].images[image].id + '.jpg' + '"></a></div>';
                         }
                     }
