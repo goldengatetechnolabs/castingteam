@@ -61,6 +61,7 @@ class Mailer_Sender implements Mailer_SenderInterface
         return
             array_merge(
                 [
+                    'user_ref' => $person->getId(),
                     'user_name' => $person->getSurname(),
                     'user_firstname' => $person->getName(),
                     'model_email' => $person->getEmail(),

@@ -168,9 +168,11 @@
                                         }
 
                                         if (json.data[model].images[index] !== undefined) {
-                                            image = '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[index].id + '.jpg';
+                                            //image = '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[index].id + '.jpg';
+                                            image = json.data[model].images[index].src_domain + '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[index].id + '.jpg';
                                         } else {
-                                            image = '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[0].id + '.jpg';
+                                            //image = '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[0].id + '.jpg';
+                                            image = json.data[model].images[0].src_domain + '/models/' + json.data[model].model_id + '/website/thumbs/' + json.data[model].images[0].id + '.jpg';
                                         }
                                     }
 

@@ -70,13 +70,13 @@
         <ul id="got-gridbox" class="pad-none-vert">
             {assign var=model_id value=$model['model_id']}
             {foreach from=$model['images'] item=image}
-                {assign var=image_id value=$image['id']}
+                {assign var=image_src_domain value=$image['src_domain']}
                 {if $image_id eq 'no_foto' or $image_id eq ''}
                     {assign var="foto_path" value="/models/no_foto.jpg"}
                     {assign var="foto_path_big" value="/models/no_foto.jpg"}
                 {else}
-                    {assign var="foto_path" value="/models/$model_id/website/thumbs/$image_id.jpg"}
-                    {assign var="foto_path_big" value="/models/$model_id/website/middle/$image_id.jpg"}
+                    {assign var="foto_path" value="$image_src_domain/models/$model_id/website/thumbs/$image_id.jpg"}
+                    {assign var="foto_path_big" value="$image_src_domain/models/$model_id/website/middle/$image_id.jpg"}
                 {/if}
                 <li class="masonry-item">
                     <a {if $image['big']} class="fancybox_image" href="{$foto_path_big}" {if !isset($user)}title="copyright"{/if} rel="model_group"{/if} >{if $image['big']}<span class="zoom_pop"><i class="fa fa-search"></i></span>{/if}<img width="228" height="350" alt="{$model['voornaam']} ({$model['model_id']})" src="{$foto_path}" class="animate fade-in"></a>

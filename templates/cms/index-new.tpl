@@ -6,7 +6,7 @@
     <meta http-equiv="content-language" content="nl" />
     <meta name="copyright" content="" />
     <meta name="keywords" content="" />
-    <link rel="stylesheet" href="/css/icheck/green.css" type="text/css" />
+    {* <link rel="stylesheet" href="/css/icheck/green.css" type="text/css" /> *}
     <link rel="stylesheet" href="/css/fonts.css" type="text/css" />
     <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
     <link rel="stylesheet" href="/css/cms/style.css" type="text/css" />

@@ -55,8 +55,13 @@
 
     {/if}
 
-    {include file='site/css_links.tpl'}
-    {include file='site/js_links.tpl'}
+    {if $current_page eq 'PortfolioSessies'}
+        {include file='site/portfoliosessies_css_links.tpl'}
+        {include file='site/portfoliosessies_js_links.tpl'}
+    {else}
+        {include file='site/css_links.tpl'}
+        {include file='site/js_links.tpl'}
+    {/if}
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     {include file='site/facebook/pixel.tpl'}
@@ -67,7 +72,11 @@
   {/if}
 
   {* <body {if !isset($user)}class="copyright"{/if}> *}
-  <body class="{if !isset($user)}copyright{/if} {if $current_page eq 'homepage'}isHomepage{/if}">
+  {if $current_page eq 'PortfolioSessies'}
+    <body class="isHomepage">
+  {else}
+    <body class="{if !isset($user)}copyright{/if} {if $current_page eq 'homepage'}isHomepage{/if}">
+  {/if}
 
     {include file='site/analyticstracking.tpl'}
     {include file='site/social_detection_schema.tpl'}

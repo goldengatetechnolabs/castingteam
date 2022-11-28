@@ -30,7 +30,8 @@
 {if (($k) is div by 3) and ($k != 1)}
 <table><tr>
 {/if}
-	<td><img style="width: 200px; display: inline; margin-bottom: 20px;" src="/models/{$model['model_id']}/website/thumbs/{$photo['id']}.jpg" alt=""/></td>
+	{* <td><img style="width: 200px; display: inline; margin-bottom: 20px;" src="/models/{$model['model_id']}/website/thumbs/{$photo['id']}.jpg" alt=""/></td> *}
+	<td><img style="width: 200px; display: inline; margin-bottom: 20px;" src="{$photo['src_domain']}/models/{$model['model_id']}/website/thumbs/{$photo['id']}.jpg" alt=""/></td>
 {if (($k+1) is div by 3) and ($k != 0)}
 </tr></table><br/><br/>
 {/if}

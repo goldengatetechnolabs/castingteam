@@ -1431,7 +1431,8 @@ class DBController
             $results = [];
 
 			while ($row = $rows->fetch_assoc()) {
-                $row['images'] = $this->getModelImagesById($row['model_id'], true);
+
+                $row['images'] = @$this->getModelImagesById($row['model_id'], true);
 
                 $results[(int) $row['model_id']] = $row;
 			}
@@ -2872,7 +2873,6 @@ class DBController
 		if ($models) {
 
 			$models_count = Flight::db()->query("SELECT count(*) FROM (SELECT * FROM model " . $filters . ") src");
-
 			$count = 21;
 
 			if ($models_count) {
@@ -2885,6 +2885,22 @@ class DBController
 				$results['count'] = $count_result[0];
 				$count = $count_result[0][0];
 			}
+			
+			$models_countIds = Flight::db()->query("SELECT GROUP_CONCAT(id_model) as ids FROM model " . $join . " " . $filters . " " . $sorted_by );
+			$totalIds= '';
+			if ($models_countIds) {
+				$count = $models_countIds->fetch_array();
+				$ids = $count[0];
+				//print_r();exit;
+				/*while ($count = $models_countIds->fetch_array()) {
+				
+					$totalIds = explod(',', $count['ids']);
+				}
+				print_r($totalIds);*/
+
+				$results['ids'] = $ids;
+			}
+
 
 			while ($model = $models->fetch_assoc()) {
 				$item = $model;
@@ -2915,7 +2931,8 @@ class DBController
 				}
 				$results[] = $item;
 			}
-
+			#echo " ininnni ";
+			#echo "<pre>"; print_r($results);exit;
 			return $results;
 		} else {
 
@@ -2954,6 +2971,20 @@ class DBController
     public function getNextModelId()
     {
         $ids = $this->query("SELECT MIN(t1.model_id + 1) AS nextID FROM model t1 LEFT JOIN model t2 ON t1.model_id + 1 = t2.model_id WHERE t2.model_id IS NULL AND t1.model_id>3557");
+
+        if ($ids) {
+            while ($id = $ids->fetch_assoc()) {
+                return $this->getValueOrThrowException($id,'nextID');
+            }
+        }
+    }
+    
+    /**
+     * @return int
+     */
+    public function getNextRenewModelId()
+    {
+        $ids = $this->query("SELECT MAX(t1.model_id + 1) AS nextID FROM model t1 LEFT JOIN model t2 ON t1.model_id + 1 = t2.model_id WHERE t2.model_id IS NULL AND LENGTH(t1.model_id) < 5");
 
         if ($ids) {
             while ($id = $ids->fetch_assoc()) {
@@ -3032,13 +3063,17 @@ class DBController
 		$images = Flight::db()->query("SELECT * FROM model_site_images WHERE id_model=" . $id . $options . " ORDER BY volgorde ASC");
 		if ($images) {
 			while ($image = $images->fetch_array()) {
-
-				if (file_exists("models/" . $id . "/website/thumbs/" . $image['id'] . ".jpg")) {
-
+                if ($image['external']) {
+                    $image['big'] = true;
+                    $image['available'] = true;
+                    $image['src_domain'] = EXTERNAL_IMAGES_SRC;
+                    $results[] = $image;
+                }
+				elseif (file_exists("models/" . $id . "/website/thumbs/" . $image['id'] . ".jpg")) {
+                    $image['src_domain'] = '';
                     if (file_exists("models/" . $id . "/website/middle/" . $image['id'] . ".jpg")) {
                         $image['big'] = true;
                     }
-
                     if (Flight::bg()->checkIsLogged()) {
                         $image['available'] = true;
                     } else {

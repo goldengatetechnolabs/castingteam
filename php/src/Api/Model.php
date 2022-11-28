@@ -156,11 +156,14 @@ class Api_Model extends Core_Controller
 
             if (
                 $status == 1 ||
-                $status == 4
+                $status == 4 ||
+                $status == 6
             ) {
 
                 if ($modelId > 100000) {
                     $nextModelId = $this->getController()->getNextModelId();
+                } else if($status == 6) {
+                    $nextModelId = $this->getController()->getNextRenewModelId();
                 }
 
                 if (isset($nextModelId)) {
@@ -186,7 +189,7 @@ class Api_Model extends Core_Controller
             $this->getController()->updateModelStatus($update, $modelId);
 
             if (
-                ($status == 1 || $status == 4) &&
+                ($status == 1 || $status == 4 || $status == 6) &&
                 isset($nextModelId)
             ) {
                 Flight::db()->query("UPDATE modelcategory SET model_id =" . $nextModelId . " WHERE model_id=" . $modelId);
@@ -199,33 +202,34 @@ class Api_Model extends Core_Controller
                 rename($_SERVER['DOCUMENT_ROOT'] . "/models/" . $modelId, $_SERVER['DOCUMENT_ROOT'] . "/models/" . $nextModelId);
 
                 $modelSend = $this->getController()->getModelById($nextModelId);
+                if($status != 6) {
+                    if (ENVIRONMENT == Enum_Environment::PRODUCTION) {
+                        (new Synchronizer_Composite())->synchronize(
+                            sprintf(
+                                "INSERT INTO `model`(`model_id`, `naam`, `voornaam`, `geslacht`, `geboortedatum`, `lengte`, `gewicht`, `straat`, `nummer`, `provincie`, `gemeente`, `postcode`, `beroep`, `studierichting`, `telefoon`, `gsm`, `email`, `homepage`, `ervaring_1`, `ervaring_2`, `ervaring_3`, `ervaring_4`, `ervaring_5`, `ervaring_6`, `ervaring_7`, `ervaring_8`, `maten_schoenen`, `maten_borst`, `maten_taille`, `maten_heupen`, `maten_cup`, `maten_kleding`, `maten_kostuum`, `maten_jeans`, `code`, `datum`, `updated`, `catmodel`, `land`) VALUES ('%s','%s','%s','%s','%s','','','%s','%s',0,'%s','','','','%s','%s','%s','','','','','','','','','','','','','','','','','','%s','%s','%s',0,'')",
+                                $modelSend['model_id'],
+                                $modelSend['naam'],
+                                $modelSend['voornaam'],
+                                $modelSend['geslacht'],
+                                $modelSend['geboortedatum'],
+                                $modelSend['straat'],
+                                $modelSend['nummer'],
+                                $modelSend['gemeente'],
+                                $modelSend['telefoon'],
+                                $modelSend['gsm'],
+                                $modelSend['email'],
+                                $modelSend['code'],
+                                $modelSend['datum'],
+                                $modelSend['updated']
+                            )
+                        );
+                    }
 
-                if (ENVIRONMENT == Enum_Environment::PRODUCTION) {
-                    (new Synchronizer_Composite())->synchronize(
-                        sprintf(
-                            "INSERT INTO `model`(`model_id`, `naam`, `voornaam`, `geslacht`, `geboortedatum`, `lengte`, `gewicht`, `straat`, `nummer`, `provincie`, `gemeente`, `postcode`, `beroep`, `studierichting`, `telefoon`, `gsm`, `email`, `homepage`, `ervaring_1`, `ervaring_2`, `ervaring_3`, `ervaring_4`, `ervaring_5`, `ervaring_6`, `ervaring_7`, `ervaring_8`, `maten_schoenen`, `maten_borst`, `maten_taille`, `maten_heupen`, `maten_cup`, `maten_kleding`, `maten_kostuum`, `maten_jeans`, `code`, `datum`, `updated`, `catmodel`, `land`) VALUES ('%s','%s','%s','%s','%s','','','%s','%s',0,'%s','','','','%s','%s','%s','','','','','','','','','','','','','','','','','','%s','%s','%s',0,'')",
-                            $modelSend['model_id'],
-                            $modelSend['naam'],
-                            $modelSend['voornaam'],
-                            $modelSend['geslacht'],
-                            $modelSend['geboortedatum'],
-                            $modelSend['straat'],
-                            $modelSend['nummer'],
-                            $modelSend['gemeente'],
-                            $modelSend['telefoon'],
-                            $modelSend['gsm'],
-                            $modelSend['email'],
-                            $modelSend['code'],
-                            $modelSend['datum'],
-                            $modelSend['updated']
-                        )
-                    );
+                    $user = new Entity_Model($nextModelId);
+                    $email = (new Repository_Email())->findByCode(Enum_EmailCode::MODEL_ACCEPTED);
+
+                    (new Mailer_LoggerProxy(new Mailer_Sender(Enum_Mail::COMMON_REPLY)))->send($user, $email, []);
                 }
-
-                $user = new Entity_Model($nextModelId);
-                $email = (new Repository_Email())->findByCode(Enum_EmailCode::MODEL_ACCEPTED);
-
-                (new Mailer_LoggerProxy(new Mailer_Sender(Enum_Mail::COMMON_REPLY)))->send($user, $email, []);
             }
 
             if ($status == 2) {
